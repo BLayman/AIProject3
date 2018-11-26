@@ -5,7 +5,7 @@ from pyswip.easy import registerForeign
 
 
 def notify(x):
-    print("%s should be avoided" % tuple(x))
+    print("%s should be avoided" % x)
 
 
 def main():

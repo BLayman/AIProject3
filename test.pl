@@ -7,4 +7,4 @@ dead(dinosaurs).
 avoid(X) :-
 dangerous(X),
 \+ dead(X),
-notify([X]).
+notify(X).
