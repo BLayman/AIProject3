@@ -14,19 +14,25 @@ def wumpusOn(x, y):
     print("hello")
     print("wumpus is on %d %d " %(x,y))
 
+def notifyWumpus(x,y):
+    print("wumpus is AT %d %d " %(x,y))
+
 
 def main():
     prolog = Prolog()
     notify.arity = 1
     registerForeign(notify)
     wumpusOn.arity = 2
+    notifyWumpus.arity = 2
     registerForeign(wumpusOn)
+    registerForeign(notifyWumpus)
 
     prolog.consult("test.pl")
     prolog.assertz("stench(1,2)")
     prolog.assertz("stench(2,1)")
 
     list(prolog.query("hasWumpus(2,2)"))
+    list(prolog.query("wumpus(2,2)"))
     #list(prolog.query("avoid(wumpus)"))
     #list(prolog.query("avoid(dinosaurs)"))
 
