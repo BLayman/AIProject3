@@ -13,8 +13,11 @@
 :- dynamic confirmGlitter/2.
 
 :- dynamic playerPoints/1.
+:- dynamic playerHasGold/1.
 
+% initial conditions
 playerPoints(0).
+playerHasGold(no).
 
 % test conditions
 hasStench(1,1).
@@ -48,7 +51,9 @@ confirmIfGlitter(X,Y) :-
 
 % if glitter is percieved, pick it gold, and increase player points
 pickUpGold() :-
-  increasePlayerPoints(1000).
+  increasePlayerPoints(1000),
+  assert(playerHasGold(yes)),
+  retract(playerHasGold(no)).
 
 increasePlayerPoints(X) :-
   playerPoints(Z),
