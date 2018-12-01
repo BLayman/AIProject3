@@ -49,8 +49,15 @@ confirmIfGlitter(X,Y) :-
 pickUpGlitter() :-
   increaseCreaturePoints(1000).
 
-increaseCreaturePoints(X) :-
+increasePlayerPoints(X) :-
   playerPoints(Z),
   Y is X + Z,
+  retract(playerPoints(Z)),
+  assert(playerPoints(Y)).
+
+% in case we need to decrease player points
+decreasePlayerPoints(X) :-
+  playerPoints(Z),
+  Y is Z - X,
   retract(playerPoints(Z)),
   assert(playerPoints(Y)).
