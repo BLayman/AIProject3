@@ -41,13 +41,14 @@ confirmIfStench(X,Y) :-
 confirmIfGlitter(X,Y) :-
   hasGlitter(X,Y),
   assert(confirmGlitter(X,Y)),
-  pickUpGlitter(),
+  retract(hasGlitter(X,Y)),
+  pickUpGold(),
   fail().
 
 
-% if glitter is percieved, pick it up, and increase player points
-pickUpGlitter() :-
-  increaseCreaturePoints(1000).
+% if glitter is percieved, pick it gold, and increase player points
+pickUpGold() :-
+  increasePlayerPoints(1000).
 
 increasePlayerPoints(X) :-
   playerPoints(Z),
