@@ -13,8 +13,8 @@ def startGame(prolog):
     startPosition = (1,1)
 
     position = startPosition
-    list(prolog.query("visit(%s,%s)" % position))
     direction = 1 # up=0, right=1, down=2, left=3
+    list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
 
 
     path = []
@@ -58,9 +58,9 @@ def startGame(prolog):
             # FIND THE WUMPUS IF WE CAN
             #
             wumpusList = toTupleList(list(prolog.query("foundWumpus(X,Y)")))
-            wumpusKilled = toTupleList(list(prolog.query("scream()")))
+            wumpusKilled = (list(prolog.query("scream()")))
 
-            if len(wumpusList) == 0 or len(wumpusKilled) == 0:
+            if len(wumpusList) == 0 or len(wumpusKilled) != 0:
                 print("Wumpus could not be found!")
                 return
 
@@ -153,9 +153,9 @@ def startGame(prolog):
 
         print("-----------")
 
-        list(prolog.query("visit(%s,%s)" % position))
+        list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
         # revert to 2nd to last position if we bump
-        bump = len(list(prolog.query("bump(%s,%s)" % (position[0],position[1])))) > 0
+        bump = len(list(prolog.query("bump(%s,%s,%s)" % (position[0],position[1],direction)))) > 0
 
         # if bumped, just move back. Cost of bump already taken into account.
         if bump:
