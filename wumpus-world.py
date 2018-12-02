@@ -17,12 +17,19 @@ def startGame(prolog):
     direction = 1 # up=0, right=1, down=2, left=3
     list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
 
-
     path = []
 
     while(True):
 
-        # list(prolog.query("visit"))
+        deadFromPit = list(prolog.query("hasPit(%s,%s)" % position))
+        deadFromWumpus = list(prolog.query("hasWumpus(%s,%s)" % position))
+
+        if(len(deadFromPit) != 0):
+            print("Died from pit!")
+            return
+        if(len(deadFromWumpus) != 0):
+            print("Died from wumpus!")
+            return
 
         # check for gold
         gold = len(list(prolog.query("foundGlitter(X,Y)"))) > 0
