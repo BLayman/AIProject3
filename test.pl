@@ -11,6 +11,8 @@
 :- dynamic confirmStench/2.
 :- dynamic confirmBreeze/2.
 :- dynamic confirmGlitter/2.
+:- dynamic confirmWumpus/2.
+:- dynamic confirmPit/2.
 
 :- dynamic playerPoints/1.
 :- dynamic playerHasGold/1.
@@ -21,34 +23,61 @@
 % initial conditions
 playerPoints(0).
 playerHasGold(no).
+playerAlive(yes).
 
-% test conditions
+% test conditions (comment out when using map to create environment)
+
+% wumpus at 1,1
+hasWumpus(1,1).
 hasStench(0,1).
 hasStench(1,0).
 hasStench(1,2).
 hasStench(2,1).
-%confirmStench(0,1).
-%confirmStench(1,0).
-hasBreeze(1,1).
+
+%glitter at 2,2
 hasGlitter(2,2).
+
+% pit at 3,3
+hasPit(3,3).
+hasBreeze(2,3).
+hasBreeze(3,2).
+hasBreeze(4,3).
+hasBreeze(3,4).
+
 
 % dummy notifyWumpus for when python is not connected (comment out if using python)
 notifyWumpus(X,Y) :-
   format('Wumpus discovered on ~w ~w', [X,Y]),
   nl.
 
-% note: this is not complete!
+% dummy notifyPit for when python is not connected (comment out if using python)
+notifyPit(X,Y) :-
+  format('Pit discovered on ~w ~w', [X,Y]),
+  nl.
+
+% check to see if you can deduce that Wumpus is at X, Y
 testWumpus(X,Y) :-
   confirmStench(A ,B),
   confirmStench(C, D),
   (A =\= C ; B =\= D),
   isAdjacent(X,Y,A,B),
   isAdjacent(X,Y,C,D),
-  format("Wumpus adjacent to ~w ~w, and ~w ~w.", [A,B,C,D]),
+  format("Wumpus adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
   assert(confirmWumpus(X,Y)),
   notifyWumpus(X,Y).
 
+% check to see if you can deduce that Pit is at X, Y
+testPit(X,Y) :-
+  confirmBreeze(A ,B),
+  confirmBreeze(C, D),
+  (A =\= C ; B =\= D),
+  isAdjacent(X,Y,A,B),
+  isAdjacent(X,Y,C,D),
+  format("Pit adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
+  assert(confirmPit(X,Y)),
+  notifyPit(X,Y).
 
+% not currently being used, but could come in handy when tying to confirm wumpus and pit locations each turn
 allAdjacentTo(X,Y, [Head|Tail], NumColumns) :-
   Row is div(Head, NumColumns),
   Col is mod(Head, NumColumns),
@@ -56,6 +85,7 @@ allAdjacentTo(X,Y, [Head|Tail], NumColumns) :-
   fail();
   allAdjacentTo(X,Y,Tail, NumColumns).
 
+% is x1, y1 adjacent to x2, y2
 isAdjacent(X1,Y1,X2,Y2) :-
   (X1 =:= X2, (Y1 =:= Y2 - 1; Y1 =:= Y2 + 1)),
   format('~w ~w , ~w ~w', [X1,Y1,X2,Y2] ), nl;
@@ -65,10 +95,24 @@ isAdjacent(X1,Y1,X2,Y2) :-
 
 % confirm percepts when entering a space
 move(X,Y) :-
+  deathFromWumpus(X,Y);
+  deathFromPit(X,Y);
   confirmIfBreeze(X,Y);
   confirmIfStench(X,Y);
   confirmIfGlitter(X,Y);
   true().
+
+deathFromWumpus(X,Y) :-
+  hasWumpus(X,Y),
+  write('Chomp! Chomp! You have been killed by the wumpus!'),
+  assert(playerAlive(no)),
+  retract(playerAlive(yes)).
+
+deathFromPit(X,Y) :-
+  hasPit(X,Y),
+  write('Ahhh! You have fallen in a pit!'),
+  assert(playerAlive(no)),
+  retract(playerAlive(yes)).
 
 confirmIfBreeze(X,Y) :-
   hasBreeze(X,Y),
@@ -82,6 +126,7 @@ confirmIfStench(X,Y) :-
   format('confirmed stench on ~w ~w', [X,Y]),
   fail().
 
+% if has glitter, confirm and pick up gold
 confirmIfGlitter(X,Y) :-
   hasGlitter(X,Y),
   assert(confirmGlitter(X,Y)),

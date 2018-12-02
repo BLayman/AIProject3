@@ -14,7 +14,10 @@ def wumpusOn(x, y):
     print("wumpus is on %d %d " %(x,y))
 
 def notifyWumpus(x,y):
-    print("wumpus is AT %d %d " %(x,y))
+    print("pit deduced to be at %d %d " %(x,y))
+
+def notifyPit(x,y):
+    print("pit deduced to be at %d %d " %(x,y))
 
 
 def main():
@@ -23,8 +26,10 @@ def main():
     registerForeign(notify)
     wumpusOn.arity = 2
     notifyWumpus.arity = 2
+    notifyPit.arity = 2
     registerForeign(wumpusOn)
     registerForeign(notifyWumpus)
+    registerForeign(notifyPit)
 
     prolog.consult("test.pl")
     prolog.assertz("stench(1,2)")
