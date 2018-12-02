@@ -8,7 +8,7 @@ from pyswip.easy import registerForeign
 # - pit, for whether a pit exists at the coordinate (boolean)
 def generateWorld(width, height, startX, startY):
     genWorld = [[{'wumpus':False, 'gold':False, 'pit':False} for x in range(width)] for y in range(height)]
-    
+
     # generate wumpus coordinates...
     wumpusX = random.randint(0, width - 1)
     wumpusY = random.randint(0, height - 1)
@@ -47,9 +47,9 @@ def genWorldFromTxt(fileName):
                 cell = {'pit': False, 'gold': False, 'wumpus': False}
                 if 'P' in string:
                     cell['pit'] = True
-                elif 'G' in string:
+                if 'G' in string:
                     cell['gold'] = True
-                elif 'W' in string:
+                if 'W' in string:
                     cell['wumpus'] = True
                 temp.append(cell)
             theMap.append(temp)
@@ -67,26 +67,26 @@ def assumeWorld(prolog, world):
     for x in range(0, width):
         for y in range(0, height):
             cell = world[y][x]
-            
+
             if(cell['wumpus']):
                 prolog.assertz("hasWumpus(%s,%s)" % (x+1,y+1))
             if(cell['gold']):
                 prolog.assertz("hasGold(%s,%s)" % (x+1,y+1))
             if(cell['pit']):
                 prolog.assertz("hasPit(%s,%s)" % (x+1,y+1))
-  
-# Utility function for displaying a given world (2D matrix of dicts) in standard out.                
+
+# Utility function for displaying a given world (2D matrix of dicts) in standard out.
 def printWorld(world):
     width = len(world)
     height = len(world[0])
-    
+
     for y in range(0, height):
-        print("+----"*width+"+")        
-        line = ""        
+        print("+----"*width+"+")
+        line = ""
         for x in range(0, width):
-            tile = "|"            
+            tile = "|"
             cell = world[-(y + 1)][x]
-            
+
             if cell['wumpus']:
                 tile += "W"
             if cell['gold']:
@@ -96,28 +96,28 @@ def printWorld(world):
             tile = tile.ljust(5)
 
             line += tile
-        print(line+"|")            
-    print("+----"*width+"+") 
+        print(line+"|")
+    print("+----"*width+"+")
 
 # Main method for testing the map
 if __name__ == '__main__':
-    # Create a new blank prolog instance (don't need to consult file for testing this)    
-    prolog = Prolog()    
-    
+    # Create a new blank prolog instance (don't need to consult file for testing this)
+    prolog = Prolog()
+
     # Generate a new world instance
     world = generateWorld(10, 10, 0, 0)
     # Put that world into our prolog instance
     assumeWorld(prolog, world)
 
     # Now we can check how the world looks
-    
+
     # First, print the world on standard out...
     printWorld(world)
-    
+
     # Now, print the prolog-queried locations for different percepts and items...
-    # pits 
+    # pits
     print("Pits: \n" + str(list(prolog.query("hasPit(X,Y)"))))
-    # gold   
+    # gold
     print("Gold: \n" + str(list(prolog.query("hasGold(X,Y)"))))
     # wumpus
     print("Wumpus: \n" + str(list(prolog.query("hasWumpus(X,Y)"))))
@@ -127,4 +127,3 @@ if __name__ == '__main__':
     print("Glitter: \n" + str(list(prolog.query("hasGlitter(X,Y)"))))
     # stenches
     print("Stench: \n" + str(list(prolog.query("hasStench(X,Y)"))))
-    

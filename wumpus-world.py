@@ -58,8 +58,9 @@ def startGame(prolog):
             # FIND THE WUMPUS IF WE CAN
             #
             wumpusList = toTupleList(list(prolog.query("foundWumpus(X,Y)")))
+            wumpusKilled = toTupleList(list(prolog.query("scream()")))
 
-            if len(wumpusList) == 0:
+            if len(wumpusList) == 0 or len(wumpusKilled) == 0:
                 print("Wumpus could not be found!")
                 return
 
