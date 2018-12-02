@@ -61,11 +61,13 @@ hasGlitter(X, Y) :-
 noPit(X, Y) :-
   neighbor(X, Y, NX, NY),
   visited(NX, NY),
+  inBounds(NX, NY),
   not(foundBreeze(NX, NY)).
 
 noWumpus(X, Y) :-
   neighbor(X, Y, NX, NY),
   visited(NX, NY),
+  inBounds(NX, NY),
   not(foundStench(NX, NY)).
 
 neighborVisited(X, Y) :-
@@ -108,6 +110,7 @@ visit(X, Y) :-
   gatherPercepts(X, Y).
 
 gatherPercepts(X, Y) :-
+  inBounds(X,Y),
   (hasBreeze(X, Y) -> assertz(foundBreeze(X, Y)); true),
   (hasStench(X, Y) -> assertz(foundStench(X, Y)); true),
   (hasGlitter(X, Y) -> assertz(foundGlitter(X, Y)); true).

@@ -53,7 +53,7 @@ def startGame(prolog):
 
         print("Projected path: " + str(projectedPath))
 
-        print("-----------")
+
 
         traversalResult = traversePath(position, direction, projectedPath)
 
@@ -61,6 +61,10 @@ def startGame(prolog):
         previousPosition = traversalResult[1]
         direction = traversalResult[2]
         points += traversalResult[3]
+
+        print("delta points: " + str(traversalResult[3]))
+
+        print("-----------")
 
         list(prolog.query("visit(%s,%s)" % position))
         # revert to 2nd to last position if we bump
@@ -135,11 +139,13 @@ def shortestPath(start, end, visited):
 
 
         if isNeighbor(end, cell):
-            path = [end]
-            iterator = cell
+            parents[end] = cell
+            path = []
+
+            iterator = end
             while(iterator != start):
-                iterator = parents[iterator]
                 path.append(iterator)
+                iterator = parents[iterator]
             path.reverse()
             return path
 
