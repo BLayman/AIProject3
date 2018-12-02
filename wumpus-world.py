@@ -129,16 +129,6 @@ def startGame(prolog):
 
             cost = 0
             needToFace = directionToFaceNext(position, wumpus)
-            # cost of turning...
-            difference = abs(needToFace-direction)
-            if difference == 3:
-                cost += -1
-            else:
-                cost += -difference
-
-            direction = needToFace
-
-            points += cost
             print("Cost to turn to cell: " + str(cost))
 
             #
@@ -180,6 +170,7 @@ def startGame(prolog):
         # if bumped, just move back. Cost of bump already taken into account.
         if bump:
             position = previousPosition
+            points += 1
 
 
         print(position)
@@ -223,13 +214,6 @@ def traversePath(position, direction, projectedPath):
     previousPosition = position
     for cell in projectedPath:
         needToFace = directionToFaceNext(position, cell)
-
-        # cost of turning...
-        difference = abs(needToFace-direction)
-        if difference == 3:
-            cost += -1
-        else:
-            cost += -difference
 
         direction = needToFace
 
