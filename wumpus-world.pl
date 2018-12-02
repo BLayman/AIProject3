@@ -7,6 +7,8 @@
 :- dynamic visited/2.
 :- dynamic bump/2.
 :- dynamic scream/0.
+:- dynamic dangerNum/3.
+
 
 % hidden information
 
@@ -121,8 +123,16 @@ foundWumpus(X,Y) :-
 killWumpus() :-
   assertz(scream()).
 
-dangers(X,Y, DX, DY) :-
+dangerBreeze(X,Y, DX, DY) :-
+  cell(X,Y),
+  cell(DX,DY),
   not(visited(X,Y)),
   neighbor(X,Y,DX,DY),
-  visited(DX,DY),
-  (foundStench(DX,DY) ; foundBreeze(DX,DY)).
+  (foundBreeze(DX,DY)).
+
+dangerStench(X,Y,DX,DY) :-
+  cell(X,Y),
+  cell(DX,DY),
+  not(visited(X,Y)),
+  neighbor(X,Y,DX,DY),
+  (foundStench(DX,DY)).
