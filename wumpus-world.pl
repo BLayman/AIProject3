@@ -10,6 +10,11 @@
 :- dynamic scream/0.
 
 
+
+isDead(X,Y) :-
+  hasPit(X,Y);
+  hasWumpus(X,Y).
+
 withinFoundBounds(X,Y) :-
   (bump(BX,BY,BD) -> false;true);
   (bump(BX,BY,BD),

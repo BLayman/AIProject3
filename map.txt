@@ -1,5 +1,4 @@
-B,P,B,P,B
-B,G,B,B,P
-P,P,B,W,B
-B,P,B,B,B
-S,B,B,B,B
+B,B,B,B
+B,B,B,B
+B,B,B,G
+B,B,B,W
