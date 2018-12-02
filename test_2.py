@@ -47,6 +47,7 @@ def main():
     list(prolog.query("move(0,0)"))
     list(prolog.query("testSafe(0,0)"))
     list(prolog.query("testSafe(1,0)"))
+    print("Wumpus: \n" + str(list(prolog.query("hasWumpus(X,Y)"))))
 
 
 if __name__ == "__main__":

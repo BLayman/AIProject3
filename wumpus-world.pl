@@ -10,12 +10,6 @@ height(4).
 
 % hidden information
 
-hasWumpus(1,3).
-hasPit(3,1).
-hasPit(3,3).
-hasPit(4,4).
-hasGold(2,3).
-
 cell(1,1).
 
 neighbor(X1, Y1, X2, Y2) :-
