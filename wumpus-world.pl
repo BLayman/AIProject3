@@ -120,3 +120,9 @@ foundWumpus(X,Y) :-
 % kill the wumpus
 killWumpus() :-
   assertz(scream()).
+
+dangers(X,Y, DX, DY) :-
+  not(visited(X,Y)),
+  neighbor(X,Y,DX,DY),
+  visited(DX,DY),
+  (foundStench(DX,DY) ; foundBreeze(DX,DY)).
