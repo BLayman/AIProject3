@@ -8,15 +8,37 @@ def startGame(prolog):
 
     points = 0
 
-    position = (1,1)
+    startPosition = (1,1)
+
+    position = startPosition
     list(prolog.query("visit(%s,%s)" % position))
     direction = 1 # up=0, right=1, down=2, left=3
 
 
     path = []
 
-    i = 0
-    while(i<20):
+    while(True):
+
+        # check for gold
+        gold = len(list(prolog.query("foundGlitter(X,Y)"))) > 0
+
+        if gold:
+            print("Found gold!")
+
+            points += 1000
+
+            pathBackToStart = shortestPath(position, startPosition, visitedCells)
+            print("Goal: " + str(startPosition))
+            print("Path to start: " + str(pathBackToStart))
+            traversalResult = traversePath(position, direction, pathBackToStart)
+
+            position = traversalResult[0]
+            direction = traversalResult[2]
+            points += traversalResult[3]
+
+            print("FINAL POINTS: " + str(points))
+
+            return
 
         unvisitedCellsDict = list(prolog.query("isUnvisitedSafe(X,Y)"))
         unvisitedCells = toTupleList(unvisitedCellsDict)
@@ -33,25 +55,12 @@ def startGame(prolog):
 
         print("-----------")
 
-        previousPosition = position
-        for cell in projectedPath:
-            needToFace = directionToFaceNext(position, cell)
+        traversalResult = traversePath(position, direction, projectedPath)
 
-            # cost of turning...
-            difference = abs(needToFace-direction)
-            if difference == 3:
-                points += -1
-            else:
-                points += -difference
-
-            direction = needToFace
-
-            # cost of moving...
-            points += -1
-
-            # update position
-            previousPosition = position
-            position = cell
+        position = traversalResult[0]
+        previousPosition = traversalResult[1]
+        direction = traversalResult[2]
+        points += traversalResult[3]
 
         list(prolog.query("visit(%s,%s)" % position))
         # revert to 2nd to last position if we bump
@@ -61,11 +70,34 @@ def startGame(prolog):
         if bump:
             position = previousPosition
 
+
         print(position)
 
-        i += 1
-
     print(list(prolog.query("visited(X,Y)")))
+
+def traversePath(position, direction, projectedPath):
+    cost = 0
+    previousPosition = position
+    for cell in projectedPath:
+        needToFace = directionToFaceNext(position, cell)
+
+        # cost of turning...
+        difference = abs(needToFace-direction)
+        if difference == 3:
+            cost += -1
+        else:
+            cost += -difference
+
+        direction = needToFace
+
+        # cost of moving...
+        cost += -1
+
+        # update position
+        previousPosition = position
+        position = cell
+
+    return (position, previousPosition, direction, cost)
 
 def directionToFaceNext(origin, next):
     if(origin[0] == next[0]):
@@ -115,7 +147,6 @@ def shortestPath(start, end, visited):
         for neighbor in neighbors(cell, visited):
             if neighbor in marked:
                 continue
-            print("Neighbor" + str(neighbor))
             marked.append(neighbor)
             frontier.append(neighbor)
             parents[neighbor] = cell
