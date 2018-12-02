@@ -47,6 +47,60 @@ def startGame(prolog):
         visitedCellsDict = list(prolog.query("visited(X,Y)"))
         visitedCells = toTupleList(visitedCellsDict)
 
+        if len(unvisitedCells) == 0:
+            print("Could not find any more safe cells, attempting to kill wumpus...")
+
+            # Kill the wumpus, if we can...
+
+            #
+            # FIND THE WUMPUS IF WE CAN
+            #
+            wumpusList = toTupleList(list(prolog.query("foundWumpus(X,Y)")))
+
+            if len(wumpusList) == 0:
+                print("Wumpus could not be found!")
+                return
+
+            wumpus = wumpusList[0]
+
+            print("Wumpus at: " + str(wumpus))
+
+            #
+            # FIND CELLS THAT WE CAN SHOOT THE WUMPUS FROM
+            #
+            cellsInRange = []
+            for cell in visitedCells:
+                if len(list(prolog.query("inBounds(%s,%s)" % (cell[0], cell[1])))) == 0:
+                    continue
+                if cell[0] == wumpus[0] or cell[1] == wumpus[1]:
+                    cellsInRange.append(cell)
+
+            if len(cellsInRange) == 0:
+                print("No cell we can shoot the wumpus from!")
+                return
+            print("Cells in range: " + str(cellsInRange))
+
+
+            #
+            # FIND CLOSEST POSITION WE CAN SHOOT FROM
+            #
+
+            shootFrom = closestUnvisited(position, cellsInRange)
+            print("Closest cell to shoot from: " + str(shootFrom))
+            pathToShootPosition = shortestPath(position, shootFrom, visitedCells)
+
+            #
+            # TRAVERSE TO NEAREST POSITION TO SHOOT FROM
+            #
+
+            traversalResult = traversePath(position, direction, pathToShootPosition)
+
+            position = traversalResult[0]
+            direction = traversalResult[2]
+            points += traversalResult[3]
+
+            print("Cost to get to cell: " + str(traversalResult[3]))
+
         print("Position: " + str(position))
         currentGoal = closestUnvisited(position, unvisitedCells)
         print("Goal: " + str(currentGoal))
@@ -198,7 +252,7 @@ def nextMove(position, safeCells):
 if __name__ == '__main__':
     prolog = Prolog()
     prolog.consult("wumpus-world.pl")
-    world = mapGen.genWorldFromTxt('book_map.txt')
+    world = mapGen.genWorldFromTxt('kill-wumpus-map.txt')
     mapGen.printWorld(world)
     mapGen.assumeWorld(prolog, world)
     prolog.assertz("cell(1,1)")

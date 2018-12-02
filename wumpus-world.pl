@@ -1,4 +1,6 @@
 
+:- dynamic hasPit/2.
+
 :- dynamic foundBreeze/2.
 :- dynamic foundStench/2.
 :- dynamic foundGlitter/2.
@@ -115,4 +117,5 @@ foundWumpus(X,Y) :-
   not((AX == BX, AY == BY)),
   hasStench(AX, AY),
   hasStench(BX, BY),
-  not(isSafe(X,Y)).
+  not(isSafe(X,Y)),
+  !.
