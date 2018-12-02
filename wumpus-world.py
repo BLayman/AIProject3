@@ -4,6 +4,7 @@ import mapGen
 import random
 import math
 import sys
+from collections import Counter
 
 
 def startGame(prolog):
@@ -60,11 +61,33 @@ def startGame(prolog):
             # FIND THE WUMPUS IF WE CAN
             #
             wumpusList = toTupleList(list(prolog.query("foundWumpus(X,Y)")))
-            wumpusKilled = (list(prolog.query("scream()")))
+            wumpusKilled = list(prolog.query("scream()"))
 
             if len(wumpusList) == 0 or len(wumpusKilled) != 0:
                 print("Wumpus could not be found!")
-                return
+                pos = getBestMove()
+                print("Guessing best move is to %d %d" % (pos[0], pos[1]))
+
+                print("-----------")
+                print("Position: " + str(position))
+                print("Goal: " + str(pos))
+                projectedPath = shortestPath(position, pos, visitedCells)
+
+                print("Projected path: " + str(projectedPath))
+
+                traversalResult = traversePath(position, direction, projectedPath)
+
+                position = traversalResult[0]
+                direction = traversalResult[2]
+                points += traversalResult[3]
+                list(prolog.query("visit(%s,%s,%s)" % (position[0], position[1], direction)))
+
+                print("delta points: " + str(traversalResult[3]))
+
+                print("-----------")
+
+
+                continue
 
             wumpus = wumpusList[0]
 
@@ -80,9 +103,6 @@ def startGame(prolog):
                 if cell[0] == wumpus[0] or cell[1] == wumpus[1]:
                     cellsInRange.append(cell)
 
-            if len(cellsInRange) == 0:
-                print("No cell we can shoot the wumpus from!")
-                return
             print("Cells in range: " + str(cellsInRange))
 
 
@@ -168,6 +188,38 @@ def startGame(prolog):
 
     print(list(prolog.query("visited(X,Y)")))
 
+def getBestMove():
+    l = list(prolog.query("dangerBreeze(X,Y, NX, NY)"))
+    #Set of positions for breezes
+    theSet = set()
+    for thing in l:
+        unkownPos = (thing["X"], thing["Y"])
+        dangerZone = (thing["NX"], thing["NY"])
+        theSet.add((unkownPos, dangerZone))
+    l = list(prolog.query("dangerStench(X,Y,NX,NY)"))
+    #Set of positions for unvisited spots with neighbors that have stenches
+    theOtherSet = set()
+    for thing in l:
+        unkownPos = (thing["X"], thing["Y"])
+        dangerZone = (thing["NX"], thing["NY"])
+        theOtherSet.add((unkownPos, dangerZone))
+    #Combine the sets as lists to account for wumpus and breeze at certain locations
+    total = list(theSet) + list(theOtherSet)
+    #Remove the breeze or stench location, just need the unvisited spot location
+    total = [thing[0] for thing in total]
+    total = Counter(total)
+    min = -1
+    pos = (0,0)
+    for key in total.keys():
+        if min == -1:
+            min = total[key]
+            pos = key
+        elif total[key] < min:
+            pos = key
+            min = total[key]
+    #Return the position with the minimum danger neighbors
+    return pos
+
 def traversePath(position, direction, projectedPath):
     cost = 0
     previousPosition = position
@@ -213,7 +265,7 @@ def findNecessaryDirection(currPos, wumpPos):
         #Else position is above wumpus, turn down
         else:
             return 2
-    # Same y's
+    #Same y's
     else:
         #If we are to the right of wumpus turn East
         if currPos[0] < currPos[0]:
@@ -221,7 +273,7 @@ def findNecessaryDirection(currPos, wumpPos):
         # We are to the left
         else:
             return 3
-    # Shouldn't return false
+    #Shouldn't return false
     return False
 
 def closestUnvisited(start, safeUnvisited):
