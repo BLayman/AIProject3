@@ -1,5 +1,6 @@
 from pyswip.prolog import Prolog
 from pyswip.easy import registerForeign
+import mapGen
 import random
 import math
 
@@ -197,6 +198,10 @@ def nextMove(position, safeCells):
 if __name__ == '__main__':
     prolog = Prolog()
     prolog.consult("wumpus-world.pl")
+    world = mapGen.genWorldFromTxt('book_map.txt')
+    mapGen.printWorld(world)
+    mapGen.assumeWorld(prolog, world)
+    prolog.assertz("cell(1,1)")
 
     startGame(prolog)
 

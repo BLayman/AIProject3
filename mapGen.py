@@ -10,12 +10,12 @@ def generateWorld(width, height, startX, startY):
     genWorld = [[{'wumpus':False, 'gold':False, 'pit':False} for x in range(width)] for y in range(height)]
     
     # generate wumpus coordinates...
-    wumpusX = random.randint(0, width-1)
-    wumpusY = random.randint(0, height-1)
+    wumpusX = random.randint(0, width - 1)
+    wumpusY = random.randint(0, height - 1)
     # don't allow the wumpus to be at the start position...
     while wumpusX == startX and wumpusY == startY:
-        wumpusX = random.randint(0, width-1)
-        wumpusY = random.randint(0, height-1)
+        wumpusX = random.randint(0, width - 1)
+        wumpusY = random.randint(0, height - 1)
 
     # generate gold coordinates...
     goldX = random.randint(0, width-1)
@@ -30,19 +30,18 @@ def generateWorld(width, height, startX, startY):
     for x in range(0, width):
         for y in range(0, height):
             # assign information to each position...
-            genWorld[x][y]['wumpus'] = wumpusX == x and wumpusY == y
-            genWorld[x][y]['gold'] = goldX == x and goldY == y
-            genWorld[x][y]['pit'] = random.uniform(0, 1) < pitRate and not (x==startX and y==startY)
+            genWorld[y][x]['wumpus'] = wumpusX == x and wumpusY == y
+            genWorld[y][x]['gold'] = goldX == x and goldY == y
+            genWorld[y][x]['pit'] = random.uniform(0, 1) < pitRate and not (x==startX and y==startY)
 
     return genWorld
 
 def genWorldFromTxt(fileName):
     theMap = []
-
     with open(fileName, 'r') as txtMap:
         for line in txtMap:
             temp = []
-            line.replace("\n", '')
+            line = line.replace("\n", '')
             line = line.split(',')
             for chr in line:
                 cell = {'pit': False, 'gold': False, 'wumpus': False}
@@ -54,47 +53,27 @@ def genWorldFromTxt(fileName):
                     cell['wumpus'] = True
                 temp.append(cell)
             theMap.append(temp)
-    return theMap
+    returnMap = []
+    while len(theMap) > 0:
+        returnMap.append(theMap.pop())
+    return returnMap
 
 
 # Given a world and a prolog instance, this will assign the entities from the world into prolog.
 def assumeWorld(prolog, world):
-    width = len(world)
-    height = len(world[0])    
+    height = len(world)
+    width = len(world[0])
 
     for x in range(0, width):
         for y in range(0, height):
-            cell = world[x][y]
+            cell = world[y][x]
             
             if(cell['wumpus']):
-                prolog.assertz("hasWumpus(%s,%s)" % (x,y))
-                assumePercepts(prolog, world, x, y, "Stench")
+                prolog.assertz("hasWumpus(%s,%s)" % (x+1,y+1))
             if(cell['gold']):
-                prolog.assertz("hasGold(%s,%s)" % (x,y))
-                prolog.assertz("hasGlitter(%s,%s)" % (x,y))
+                prolog.assertz("hasGold(%s,%s)" % (x+1,y+1))
             if(cell['pit']):
-                prolog.assertz("hasPit(%s,%s)" % (x,y))
-                assumePercepts(prolog, world, x, y, "Breeze")
-
-            
-# Given a world and a prolog instance, this will assign all the percepts for that world.
-def assumePercepts(prolog, world, x, y, percept):
-    width = len(world)
-    height = len(world[0])
-
-    # Check that coordinates for each neighbor are within bounds
-    # check (x-1, y)
-    if x-1 >= 0:
-        prolog.assertz("has%s(%s,%s)" % (percept, x-1, y))
-    # check (x+1, y)    
-    if x+1 <= width-1:
-        prolog.assertz("has%s(%s,%s)" % (percept, x+1, y))
-    # check (x, y-1)    
-    if y-1 >= 0:
-        prolog.assertz("has%s(%s,%s)" % (percept, x, y-1))
-    # check (x, y+1)    
-    if y+1 <= height-1:
-        prolog.assertz("has%s(%s,%s)" % (percept, x, y+1))
+                prolog.assertz("hasPit(%s,%s)" % (x+1,y+1))
   
 # Utility function for displaying a given world (2D matrix of dicts) in standard out.                
 def printWorld(world):
@@ -106,7 +85,7 @@ def printWorld(world):
         line = ""        
         for x in range(0, width):
             tile = "|"            
-            cell = world[x][y]
+            cell = world[-(y + 1)][x]
             
             if cell['wumpus']:
                 tile += "W"
