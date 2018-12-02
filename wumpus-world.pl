@@ -5,12 +5,7 @@
 :- dynamic visited/2.
 :- dynamic bump/2.
 
-width(4).
-height(4).
-
 % hidden information
-
-cell(1,1).
 
 neighbor(X1, Y1, X2, Y2) :-
   cell(X1, Y1),

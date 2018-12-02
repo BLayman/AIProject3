@@ -3,6 +3,7 @@ from pyswip.easy import registerForeign
 import mapGen
 import random
 import math
+import sys
 
 
 def startGame(prolog):
@@ -116,6 +117,26 @@ def directionToFaceNext(origin, next):
         else:
             return 3
 
+def findNecessaryDirection(currPos, wumpPos):
+    #If same x's
+    if currPos[0] == wumpPos[0]:
+        #If current position is below Wumpus, point up
+        if currPos[1] < wumpPos[1]:
+            return 0
+        #Else position is above wumpus, turn down
+        else:
+            return 2
+    # Same y's
+    else:
+        #If we are to the right of wumpus turn East
+        if currPos[0] < currPos[0]:
+            return 1
+        # We are to the left
+        else:
+            return 3
+    # Shouldn't return false
+    return False
+
 def closestUnvisited(start, safeUnvisited):
     minDist = math.inf
     min = (None, None)
@@ -196,12 +217,20 @@ def nextMove(position, safeCells):
 
 
 if __name__ == '__main__':
+    size = int(sys.argv[1])
+    fileName = sys.argv[2]
     prolog = Prolog()
     prolog.consult("wumpus-world.pl")
-    world = mapGen.genWorldFromTxt('book_map.txt')
+    if fileName == 'random':
+        world = mapGen.generateWorld(size, size, 0, 0)
+    else:
+        world = mapGen.genWorldFromTxt(fileName)
     mapGen.printWorld(world)
     mapGen.assumeWorld(prolog, world)
     prolog.assertz("cell(1,1)")
+    prolog.assertz("width(%d)" % size)
+    prolog.assertz("height(%d)" % size)
+
 
     startGame(prolog)
 
