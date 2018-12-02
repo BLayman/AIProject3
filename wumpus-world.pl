@@ -1,11 +1,12 @@
 
 :- dynamic hasPit/2.
-
+:- dynamic cell/2.
 :- dynamic foundBreeze/2.
 :- dynamic foundStench/2.
 :- dynamic foundGlitter/2.
 :- dynamic visited/2.
 :- dynamic bump/2.
+:- dynamic scream/0.
 
 % hidden information
 
@@ -56,10 +57,11 @@ noPit(X, Y) :-
   not(foundBreeze(NX, NY)).
 
 noWumpus(X, Y) :-
-  neighbor(X, Y, NX, NY),
+  scream();
+  (neighbor(X, Y, NX, NY),
   visited(NX, NY),
   inBounds(NX, NY),
-  not(foundStench(NX, NY)).
+  not(foundStench(NX, NY))).
 
 neighborVisited(X, Y) :-
   neighbor(X, Y, NX, NY),
@@ -114,3 +116,7 @@ foundWumpus(X,Y) :-
   hasStench(BX, BY),
   not(isSafe(X,Y)),
   !.
+
+% kill the wumpus
+killWumpus() :-
+  assertz(scream()).

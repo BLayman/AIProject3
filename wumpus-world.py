@@ -38,6 +38,7 @@ def startGame(prolog):
             direction = traversalResult[2]
             points += traversalResult[3]
 
+            print("Cost to get back to start: " + str(traversalResult[3]))
             print("FINAL POINTS: " + str(points))
 
             return
@@ -99,8 +100,37 @@ def startGame(prolog):
             position = traversalResult[0]
             direction = traversalResult[2]
             points += traversalResult[3]
-
             print("Cost to get to cell: " + str(traversalResult[3]))
+
+            #
+            # TURN DIRECTION TO FACE WUMPUS
+            #
+
+            cost = 0
+            needToFace = directionToFaceNext(position, wumpus)
+            # cost of turning...
+            difference = abs(needToFace-direction)
+            if difference == 3:
+                cost += -1
+            else:
+                cost += -difference
+
+            direction = needToFace
+
+            points += cost
+            print("Cost to turn to cell: " + str(cost))
+
+            #
+            # KILL THE WUMPUS
+            #
+
+            list(prolog.query("killWumpus()"))
+            print("Cost to shoot arrow: " + str(-10))
+            points += -10
+
+            print("-----------")
+            continue
+
 
         print("Position: " + str(position))
         currentGoal = closestUnvisited(position, unvisitedCells)
