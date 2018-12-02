@@ -19,6 +19,7 @@
 
 :- dynamic hasWumpus/2.
 :- dynamic confirmSafe/2.
+:- dynamic testSafe/2.
 
 % initial conditions
 playerPoints(0).
@@ -28,32 +29,32 @@ playerAlive(yes).
 % test conditions (comment out when using map to create environment)
 
 % wumpus at 1,1
-hasWumpus(1,1).
-hasStench(0,1).
-hasStench(1,0).
-hasStench(1,2).
-hasStench(2,1).
+%hasWumpus(1,1).
+%hasStench(0,1).
+%hasStench(1,0).
+%hasStench(1,2).
+%hasStench(2,1).
 
 %glitter at 2,2
-hasGlitter(2,2).
+%hasGlitter(2,2).
 
 % pit at 3,3
-hasPit(3,3).
-hasBreeze(2,3).
-hasBreeze(3,2).
-hasBreeze(4,3).
-hasBreeze(3,4).
+%hasPit(3,3).
+%hasBreeze(2,3).
+%hasBreeze(3,2).
+%hasBreeze(4,3).
+%hasBreeze(3,4).
 
 
 % dummy notifyWumpus for when python is not connected (comment out if using python)
-notifyWumpus(X,Y) :-
-  format('Wumpus discovered on ~w ~w', [X,Y]),
-  nl.
+%notifyWumpus(X,Y) :-
+%  format('Wumpus discovered on ~w ~w', [X,Y]),
+%  nl.
 
 % dummy notifyPit for when python is not connected (comment out if using python)
-notifyPit(X,Y) :-
-  format('Pit discovered on ~w ~w', [X,Y]),
-  nl.
+%notifyPit(X,Y) :-
+%  format('Pit discovered on ~w ~w', [X,Y]),
+%  nl.
 
 % check to see if you can deduce that Wumpus is at X, Y
 testWumpus(X,Y) :-
@@ -93,6 +94,11 @@ wumpusTestTwo(X,Y) :-
   assert(confirmWumpus(X,Y)),
   notifyWumpus(X,Y),
   !.
+
+testSafe(X,Y) :-
+    confirmSafe(X,Y) ->
+    notifySafe(X,Y);
+    notifyNotSafe(X,Y).
 
 % check to see if you can deduce that Pit is at X, Y
 testPit(X,Y) :-
@@ -141,7 +147,8 @@ isAdjacent(X1,Y1,X2,Y2) :-
   (X1 =:= X2, (Y1 =:= Y2 - 1; Y1 =:= Y2 + 1)),
   format('~w ~w , ~w ~w', [X1,Y1,X2,Y2] ), nl;
   (Y1 =:= Y2, (X1 =:= X2 - 1; X1 =:= X2 + 1)),
-  format('~w ~w , ~w ~w', [X1,Y1,X2,Y2] ), nl.
+  format('~w ~w , ~w ~w', [X1,Y1,X2,Y2] ),
+  nl.
 
 
 % confirm percepts when entering a space
@@ -153,6 +160,7 @@ move(X,Y) :-
   confirmIfGlitter(X,Y);
   assert(confirmSafe(X,Y)),
   true().
+
 
 deathFromWumpus(X,Y) :-
   hasWumpus(X,Y),

@@ -34,7 +34,28 @@ def generateWorld(width, height, startX, startY):
             genWorld[x][y]['gold'] = goldX == x and goldY == y
             genWorld[x][y]['pit'] = random.uniform(0, 1) < pitRate and not (x==startX and y==startY)
 
-    return genWorld        
+    return genWorld
+
+def genWorldFromTxt(fileName):
+    theMap = []
+
+    with open(fileName, 'r') as txtMap:
+        for line in txtMap:
+            temp = []
+            line.replace("\n", '')
+            line = line.split(',')
+            for chr in line:
+                cell = {'pit': False, 'gold': False, 'wumpus': False}
+                if chr == 'P':
+                    cell['pit'] = True
+                elif chr == 'G':
+                    cell['gold'] = True
+                elif chr == 'W':
+                    cell['wumpus'] = True
+                temp.append(cell)
+            theMap.append(temp)
+    return theMap
+
 
 # Given a world and a prolog instance, this will assign the entities from the world into prolog.
 def assumeWorld(prolog, world):
