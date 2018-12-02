@@ -18,7 +18,6 @@
 :- dynamic playerHasGold/1.
 
 :- dynamic hasWumpus/2.
-:- dynamic notifyWumpus/2.
 
 % initial conditions
 playerPoints(0).
@@ -46,14 +45,14 @@ hasBreeze(3,4).
 
 
 % dummy notifyWumpus for when python is not connected (comment out if using python)
-notifyWumpus(X,Y) :-
-  format('Wumpus discovered on ~w ~w', [X,Y]),
-  nl.
+%notifyWumpus(X,Y) :-
+%  format('Wumpus discovered on ~w ~w', [X,Y]),
+%  nl.
 
 % dummy notifyPit for when python is not connected (comment out if using python)
-notifyPit(X,Y) :-
-  format('Pit discovered on ~w ~w', [X,Y]),
-  nl.
+%notifyPit(X,Y) :-
+%  format('Pit discovered on ~w ~w', [X,Y]),
+%  nl.
 
 % check to see if you can deduce that Wumpus is at X, Y
 testWumpus(X,Y) :-
@@ -64,7 +63,8 @@ testWumpus(X,Y) :-
   isAdjacent(X,Y,C,D),
   format("Wumpus adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
   assert(confirmWumpus(X,Y)),
-  notifyWumpus(X,Y).
+  notifyWumpus(X,Y),
+  !.
 
 % check to see if you can deduce that Pit is at X, Y
 testPit(X,Y) :-
@@ -75,7 +75,8 @@ testPit(X,Y) :-
   isAdjacent(X,Y,C,D),
   format("Pit adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
   assert(confirmPit(X,Y)),
-  notifyPit(X,Y).
+  notifyPit(X,Y),
+  !.
 
 % not currently being used, but could come in handy when tying to confirm wumpus and pit locations each turn
 allAdjacentTo(X,Y, [Head|Tail], NumColumns) :-
@@ -118,12 +119,14 @@ confirmIfBreeze(X,Y) :-
   hasBreeze(X,Y),
   assert(confirmBreeze(X,Y)),
   format('confirmed breeze on ~w ~w', [X,Y]),
+  nl,
   fail().
 
 confirmIfStench(X,Y) :-
   hasStench(X,Y),
   assert(confirmStench(X,Y)),
   format('confirmed stench on ~w ~w', [X,Y]),
+  nl,
   fail().
 
 % if has glitter, confirm and pick up gold
@@ -131,6 +134,7 @@ confirmIfGlitter(X,Y) :-
   hasGlitter(X,Y),
   assert(confirmGlitter(X,Y)),
   format('confirmed glitter on ~w ~w', [X,Y]),
+  nl,
   retract(hasGlitter(X,Y)),
   pickUpGold(),
   fail().

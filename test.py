@@ -9,12 +9,9 @@ def notify(x):
 def killWumpus(prolog):
     prolog.assertz("dead(wumpus)")
 
-def wumpusOn(x, y):
-    print("hello")
-    print("wumpus is on %d %d " %(x,y))
 
 def notifyWumpus(x,y):
-    print("pit deduced to be at %d %d " %(x,y))
+    print("wumpus deduced to be at %d %d " %(x,y))
 
 def notifyPit(x,y):
     print("pit deduced to be at %d %d " %(x,y))
@@ -24,21 +21,16 @@ def main():
     prolog = Prolog()
     notify.arity = 1
     registerForeign(notify)
-    wumpusOn.arity = 2
     notifyWumpus.arity = 2
     notifyPit.arity = 2
-    registerForeign(wumpusOn)
     registerForeign(notifyWumpus)
     registerForeign(notifyPit)
 
     prolog.consult("test.pl")
-    prolog.assertz("stench(1,2)")
-    prolog.assertz("stench(2,1)")
 
-    list(prolog.query("hasWumpus(2,2)"))
-    list(prolog.query("wumpus(2,2)"))
-    #list(prolog.query("avoid(wumpus)"))
-    #list(prolog.query("avoid(dinosaurs)"))
+    list(prolog.query("move(0,1)"))
+    list(prolog.query("move(1,0)"))
+    list(prolog.query("testWumpus(1,1)"))
 
 
 if __name__ == "__main__":
