@@ -18,6 +18,7 @@
 :- dynamic playerHasGold/1.
 
 :- dynamic hasWumpus/2.
+:- dynamic confirmSafe/2.
 
 % initial conditions
 playerPoints(0).
@@ -45,35 +46,84 @@ hasBreeze(3,4).
 
 
 % dummy notifyWumpus for when python is not connected (comment out if using python)
-%notifyWumpus(X,Y) :-
-%  format('Wumpus discovered on ~w ~w', [X,Y]),
-%  nl.
+notifyWumpus(X,Y) :-
+  format('Wumpus discovered on ~w ~w', [X,Y]),
+  nl.
 
 % dummy notifyPit for when python is not connected (comment out if using python)
-%notifyPit(X,Y) :-
-%  format('Pit discovered on ~w ~w', [X,Y]),
-%  nl.
+notifyPit(X,Y) :-
+  format('Pit discovered on ~w ~w', [X,Y]),
+  nl.
 
 % check to see if you can deduce that Wumpus is at X, Y
 testWumpus(X,Y) :-
+  wumpusTestOne(X,Y);
+  wumpusTestTwo(X,Y).
+
+% at least three adjacent squares have a stench
+wumpusTestOne(X,Y) :-
   confirmStench(A ,B),
   confirmStench(C, D),
+  confirmStench(E, F),
   (A =\= C ; B =\= D),
+  (A =\= E ; B =\= F),
+  (C =\= E ; D =\= F),
   isAdjacent(X,Y,A,B),
   isAdjacent(X,Y,C,D),
-  format("Wumpus adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
+  format("Wumpus adjacent to ~w ~w, ~w ~w, and ~w ~w. ", [A,B,C,D,E,F]),
+  nl,
+  assert(confirmWumpus(X,Y)),
+  notifyWumpus(X,Y),
+  !.
+
+% two squares have stench and one safe square is adjacent to both of the stenchy squares
+wumpusTestTwo(X,Y) :-
+  confirmStench(A ,B),
+  confirmStench(C, D),
+  confirmSafe(E, F),
+  (A =\= C ; B =\= D),
+  (A =\= E ; B =\= F),
+  (C =\= E ; D =\= F),
+  isAdjacent(A,B,E,F),
+  isAdjacent(C,D,E,F),
+  isAdjacent(X,Y,A,B),
+  isAdjacent(X,Y,C,D),
+  format("Wumpus adjacent to ~w ~w, ~w ~w, and ~w ~w. ", [A,B,C,D,E,F]),
+  nl,
   assert(confirmWumpus(X,Y)),
   notifyWumpus(X,Y),
   !.
 
 % check to see if you can deduce that Pit is at X, Y
 testPit(X,Y) :-
+  pitTestOne(X,Y);
+  pitTestTwo(X,Y).
+
+pitTestOne(X,Y) :-
   confirmBreeze(A ,B),
   confirmBreeze(C, D),
+  confirmBreeze(E, F),
   (A =\= C ; B =\= D),
+  (A =\= E ; B =\= F),
+  (C =\= E ; D =\= F),
+  format("Pit adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
+  assert(confirmPit(X,Y)),
+  notifyPit(X,Y),
+  !.
+
+pitTestTwo(X,Y) :-
+  confirmBreeze(A ,B),
+  confirmBreeze(C, D),
+  confirmSafe(E, F),
+  (A =\= C ; B =\= D),
+  (A =\= E ; B =\= F),
+  (C =\= E ; D =\= F),
+  isAdjacent(A,B,E,F),
+  isAdjacent(C,D,E,F),
   isAdjacent(X,Y,A,B),
   isAdjacent(X,Y,C,D),
-  format("Pit adjacent to ~w ~w, and ~w ~w. ", [A,B,C,D]),
+  format("Pit adjacent to ~w ~w, ~w ~w, and ~w ~w. ", [A,B,C,D,E,F]),
+  nl,
   assert(confirmPit(X,Y)),
   notifyPit(X,Y),
   !.
@@ -101,19 +151,22 @@ move(X,Y) :-
   confirmIfBreeze(X,Y);
   confirmIfStench(X,Y);
   confirmIfGlitter(X,Y);
+  assert(confirmSafe(X,Y)),
   true().
 
 deathFromWumpus(X,Y) :-
   hasWumpus(X,Y),
   write('Chomp! Chomp! You have been killed by the wumpus!'),
   assert(playerAlive(no)),
-  retract(playerAlive(yes)).
+  retract(playerAlive(yes)),
+  !.
 
 deathFromPit(X,Y) :-
   hasPit(X,Y),
   write('Ahhh! You have fallen in a pit!'),
   assert(playerAlive(no)),
-  retract(playerAlive(yes)).
+  retract(playerAlive(yes)),
+  !.
 
 confirmIfBreeze(X,Y) :-
   hasBreeze(X,Y),
