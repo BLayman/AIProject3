@@ -43,13 +43,13 @@ def genWorldFromTxt(fileName):
             temp = []
             line = line.replace("\n", '')
             line = line.split(',')
-            for chr in line:
+            for string in line:
                 cell = {'pit': False, 'gold': False, 'wumpus': False}
-                if chr == 'P':
+                if 'P' in string:
                     cell['pit'] = True
-                elif chr == 'G':
+                elif 'G' in string:
                     cell['gold'] = True
-                elif chr == 'W':
+                elif 'W' in string:
                     cell['wumpus'] = True
                 temp.append(cell)
             theMap.append(temp)
