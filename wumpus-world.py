@@ -22,6 +22,8 @@ def startGame(prolog):
 
     while(True):
 
+        # list(prolog.query("visit"))
+
         # check for gold
         gold = len(list(prolog.query("foundGlitter(X,Y)"))) > 0
 

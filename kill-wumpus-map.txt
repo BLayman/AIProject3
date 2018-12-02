@@ -1,4 +1,4 @@
-P,P,B,B
+B,B,B,G
+B,B,W,B
 B,B,B,B
-B,B,B,GP
-S,B,W,B
+S,B,B,B
