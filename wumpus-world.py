@@ -14,8 +14,8 @@ def startGame(prolog):
     startPosition = (1,1)
 
     position = startPosition
-    list(prolog.query("visit(%s,%s)" % position))
     direction = 1 # up=0, right=1, down=2, left=3
+    list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
 
 
     path = []
@@ -78,7 +78,7 @@ def startGame(prolog):
                 position = traversalResult[0]
                 direction = traversalResult[2]
                 points += traversalResult[3]
-                list(prolog.query("visit(%s,%s)" % position))
+                list(prolog.query("visit(%s,%s,%s)" % (position[0], position[1], direction)))
 
                 print("delta points: " + str(traversalResult[3]))
 
@@ -173,9 +173,9 @@ def startGame(prolog):
 
         print("-----------")
 
-        list(prolog.query("visit(%s,%s)" % position))
+        list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
         # revert to 2nd to last position if we bump
-        bump = len(list(prolog.query("bump(%s,%s)" % (position[0],position[1])))) > 0
+        bump = len(list(prolog.query("bump(%s,%s,%s)" % (position[0],position[1],direction)))) > 0
 
         # if bumped, just move back. Cost of bump already taken into account.
         if bump:

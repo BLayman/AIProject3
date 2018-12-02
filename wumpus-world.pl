@@ -1,13 +1,22 @@
-
+:- dynamic width/1.
+:- dynamic height/1.
 :- dynamic hasPit/2.
 :- dynamic cell/2.
 :- dynamic foundBreeze/2.
 :- dynamic foundStench/2.
 :- dynamic foundGlitter/2.
 :- dynamic visited/2.
-:- dynamic bump/2.
+:- dynamic bump/3.
 :- dynamic scream/0.
-:- dynamic dangerNum/3.
+
+
+withinFoundBounds(X,Y) :-
+  (bump(BX,BY,BD) -> false;true);
+  (bump(BX,BY,BD),
+  (BD == 0 -> Y < BY; true),
+  (BD == 2 -> Y > BY; true),
+  (BD == 1 -> X < BX; true),
+  (BD == 2 -> X > BX; true)).
 
 
 % hidden information
@@ -77,7 +86,8 @@ isSafe(X, Y) :-
 isUnvisitedSafe(X, Y) :-
   cell(X,Y),
   not(visited(X,Y)),
-  isSafe(X,Y).
+  isSafe(X,Y),
+  withinFoundBounds(X, Y).
 
 % for discovering new percepts at a visited cell.
 
@@ -90,10 +100,10 @@ inBounds(X, Y) :-
   Y >= 1,
   Y =< H.
 
-visit(X, Y) :-
+visit(X, Y, D) :-
   (visited(X,Y) -> false; true),
   assertz(visited(X,Y)),
-  (inBounds(X,Y) -> true ; assertz(bump(X,Y)), false),
+  (inBounds(X,Y) -> true ; assertz(bump(X,Y,D)), false),
   XP is X+1,
   XM is X-1,
   YP is Y+1,
