@@ -28,10 +28,12 @@ def startGame(prolog):
         if(len(deadFromPit) != 0):
             print("Died from pit!")
             deathReason = 'Pit'
+            points += -1000
             return (points, len(list(prolog.query("visited(X,Y)"))), deathReason)
         if(len(deadFromWumpus) != 0):
             print("Died from wumpus!")
             deathReason = "Wumpus"
+            points += -1000
             return (points, len(list(prolog.query("visited(X,Y)"))), deathReason)
 
         # check for gold
@@ -89,7 +91,7 @@ def startGame(prolog):
                 direction = traversalResult[2]
                 points += traversalResult[3]
 
-                print("delta points: " + str(traversalResult[3]))
+                print("Points so far: " + str(points))
 
                 print("-----------")
 
@@ -168,13 +170,9 @@ def startGame(prolog):
         direction = traversalResult[2]
         points += traversalResult[3]
 
-        print("delta points: " + str(traversalResult[3]))
+        print("Points for: " + str(points))
 
         print("-----------")
-
-
-
-
 
         print(position)
 
@@ -362,14 +360,16 @@ def runABunch(n, size):
         prolog.assertz("width(%d)" % size)
         prolog.assertz("height(%d)" % size)
 
-        startGame(prolog)
+        result = startGame(prolog)
+
+        print(str(result))
 
         del prolog
 
 
 if __name__ == '__main__':
     size = int(sys.argv[1])
-    runABunch(100, size)
+    runABunch(10, size)
 
     #
     # size = int(sys.argv[1])
