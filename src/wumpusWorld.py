@@ -1,6 +1,6 @@
 from pyswip.prolog import Prolog
 from pyswip.easy import registerForeign
-import mapGen
+import worldBuilder
 import random
 import math
 import sys
@@ -349,13 +349,13 @@ def nextMove(position, safeCells):
 def runABunch(n, size):
     for i in range(0,n):
         prolog = Prolog()
-        prolog.consult("wumpus-world.pl")
+        prolog.consult("wumpusWorld.pl")
 
         list(prolog.query("initPredicates()"))
 
-        world = mapGen.generateWorld(size, size, 0, 0)
-        mapGen.printWorld(world)
-        mapGen.assumeWorld(prolog, world)
+        world = worldBuilder.generateWorld(size, size, 0, 0)
+        worldBuilder.printWorld(world)
+        worldBuilder.assumeWorld(prolog, world)
         prolog.assertz("cell(1,1)")
         prolog.assertz("width(%d)" % size)
         prolog.assertz("height(%d)" % size)
@@ -377,11 +377,11 @@ if __name__ == '__main__':
     # prolog = Prolog()
     # prolog.consult("wumpus-world.pl")
     # if fileName == 'random':
-    #     world = mapGen.generateWorld(size, size, 0, 0)
+    #     world = worldBuilder.generateWorld(size, size, 0, 0)
     # else:
-    #     world = mapGen.genWorldFromTxt(fileName)
-    # mapGen.printWorld(world)
-    # mapGen.assumeWorld(prolog, world)
+    #     world = worldBuilder.genWorldFromTxt(fileName)
+    # worldBuilder.printWorld(world)
+    # worldBuilder.assumeWorld(prolog, world)
     # prolog.assertz("cell(1,1)")
     # prolog.assertz("width(%d)" % size)
     # prolog.assertz("height(%d)" % size)
