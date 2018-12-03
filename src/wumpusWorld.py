@@ -6,7 +6,8 @@ import math
 import sys
 from collections import Counter
 
-
+# Begins the game starting at positon (1,1) and finishing when we have either
+# died or have found the gold and climbed out.
 def startGame(prolog):
     points = 0      # keeps track of points
     outcome = 'Won' # used for returning result, default is 'Won'
