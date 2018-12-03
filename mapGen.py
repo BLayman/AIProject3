@@ -105,7 +105,7 @@ if __name__ == '__main__':
     prolog = Prolog()
 
     # Generate a new world instance
-    world = generateWorld(10, 10, 0, 0)
+    #world = generateWorld(10, 10, 0, 0)
     # Put that world into our prolog instance
     assumeWorld(prolog, world)
 

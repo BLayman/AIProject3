@@ -5,11 +5,13 @@ import random
 import math
 import sys
 from collections import Counter
+from resultCounter import ResultCounter
 
 
 def startGame(prolog):
 
     points = 0
+    deathReason = 'Win'
 
     startPosition = (1,1)
 
@@ -22,14 +24,16 @@ def startGame(prolog):
     while(True):
 
         deadFromPit = list(prolog.query("hasPit(%s,%s)" % position))
-        deadFromWumpus = list(prolog.query("dieFromWumpus(%s,%s)" % position))
+        deadFromWumpus = list(prolog.query("hasWumpus(%s,%s)" % position))
 
         if(len(deadFromPit) != 0):
             print("Died from pit!")
-            return
+            deathReason = 'Pit'
+            return (points, len(list(prolog.query("visited(X,Y)"))), deathReason)
         if(len(deadFromWumpus) != 0):
             print("Died from wumpus!")
-            return
+            deathReason = "Wumpus"
+            return (points, len(list(prolog.query("visited(X,Y)"))), deathReason)
 
         # check for gold
         gold = len(list(prolog.query("foundGlitter(X,Y)"))) > 0
@@ -51,7 +55,7 @@ def startGame(prolog):
             print("Cost to get back to start: " + str(traversalResult[3]))
             print("FINAL POINTS: " + str(points))
 
-            return
+            return (points, len(list(prolog.query("visited(X,Y)"))), deathReason)
 
         unvisitedCellsDict = list(prolog.query("isUnvisitedSafe(X,Y)"))
         unvisitedCells = toTupleList(unvisitedCellsDict)
@@ -71,7 +75,6 @@ def startGame(prolog):
             wumpusKilled = list(prolog.query("scream()"))
 
             if len(wumpusList) == 0 or len(wumpusKilled) != 0:
-                print("Position: " + str(position))
                 print("Wumpus could not be found!")
                 pos = getBestMove(prolog)
                 print("Guessing best move is to %d %d" % (pos[0], pos[1]))
@@ -177,6 +180,7 @@ def startGame(prolog):
         print(position)
 
     print(list(prolog.query("visited(X,Y)")))
+    return(points, len(list(prolog.query("visited(X,Y)"))), deathReason)
 
 def getBestMove(prolog):
     l = list(prolog.query("dangerBreeze(X,Y, NX, NY)"))
