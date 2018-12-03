@@ -5,7 +5,6 @@ import random
 import math
 import sys
 from collections import Counter
-from resultCounter import ResultCounter
 
 
 def startGame(prolog):
@@ -60,12 +59,8 @@ def startGame(prolog):
         unvisitedCellsDict = list(prolog.query("isUnvisitedSafe(X,Y)"))
         unvisitedCells = toTupleList(unvisitedCellsDict)
 
-        print(unvisitedCells)
-
         visitedCellsDict = list(prolog.query("visitedInBounds(X,Y)"))
         visitedCells = toTupleList(visitedCellsDict)
-
-        print(visitedCells)
 
         if len(unvisitedCells) == 0:
             print("Could not find any more safe cells, attempting to kill wumpus...")
@@ -368,6 +363,8 @@ def runABunch(n, size):
         prolog.assertz("height(%d)" % size)
 
         startGame(prolog)
+
+        del prolog
 
 
 if __name__ == '__main__':

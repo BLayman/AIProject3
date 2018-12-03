@@ -18,7 +18,7 @@ initPredicates() :-
   retractall(hasPit(_,_)),
   retractall(hasWumpus(_,_)),
   retractall(scream()),
-  retractall(cell(_)),
+  retractall(cell(_,_)),
   retractall(foundBreeze(_,_)),
   retractall(foundGlitter(_,_)),
   retractall(foundStench(_,_)),
