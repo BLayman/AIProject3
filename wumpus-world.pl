@@ -8,20 +8,22 @@
 :- dynamic visited/2.
 :- dynamic bump/3.
 :- dynamic scream/0.
+:- visitedInBounds/2.
 
-
+dieFromWumpus(X,Y) :-
+  hasWumpus(X,Y),
+  not(scream()).
 
 isDead(X,Y) :-
   hasPit(X,Y);
   hasWumpus(X,Y).
 
-withinFoundBounds(X,Y) :-
-  (bump(BX,BY,BD) -> false;true);
-  (bump(BX,BY,BD),
-  (BD == 0 -> Y < BY; true),
-  (BD == 2 -> Y > BY; true),
-  (BD == 1 -> X < BX; true),
-  (BD == 2 -> X > BX; true)).
+outOfFoundBounds(X,Y) :-
+  bump(BX,BY,BD),
+  (BD == 0 -> Y >= BY; true),
+  (BD == 2 -> Y =< BY; true),
+  (BD == 1 -> X >= BX; true),
+  (BD == 3 -> X =< BX; true).
 
 
 % hidden information
@@ -92,7 +94,7 @@ isUnvisitedSafe(X, Y) :-
   cell(X,Y),
   not(visited(X,Y)),
   isSafe(X,Y),
-  withinFoundBounds(X, Y).
+  not(outOfFoundBounds(X,Y)).
 
 % for discovering new percepts at a visited cell.
 
@@ -108,7 +110,7 @@ inBounds(X, Y) :-
 visit(X, Y, D) :-
   (visited(X,Y) -> false; true),
   assertz(visited(X,Y)),
-  (inBounds(X,Y) -> true ; assertz(bump(X,Y,D)), false),
+  (inBounds(X,Y) -> assertz(visitedInBounds(X,Y)) ; assertz(bump(X,Y,D)), false),
   XP is X+1,
   XM is X-1,
   YP is Y+1,

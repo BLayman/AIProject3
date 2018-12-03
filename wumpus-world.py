@@ -22,7 +22,7 @@ def startGame(prolog):
     while(True):
 
         deadFromPit = list(prolog.query("hasPit(%s,%s)" % position))
-        deadFromWumpus = list(prolog.query("hasWumpus(%s,%s)" % position))
+        deadFromWumpus = list(prolog.query("dieFromWumpus(%s,%s)" % position))
 
         if(len(deadFromPit) != 0):
             print("Died from pit!")
@@ -56,7 +56,7 @@ def startGame(prolog):
         unvisitedCellsDict = list(prolog.query("isUnvisitedSafe(X,Y)"))
         unvisitedCells = toTupleList(unvisitedCellsDict)
 
-        visitedCellsDict = list(prolog.query("visited(X,Y)"))
+        visitedCellsDict = list(prolog.query("visitedInBounds(X,Y)"))
         visitedCells = toTupleList(visitedCellsDict)
 
         if len(unvisitedCells) == 0:
@@ -71,12 +71,11 @@ def startGame(prolog):
             wumpusKilled = list(prolog.query("scream()"))
 
             if len(wumpusList) == 0 or len(wumpusKilled) != 0:
+                print("Position: " + str(position))
                 print("Wumpus could not be found!")
                 pos = getBestMove()
                 print("Guessing best move is to %d %d" % (pos[0], pos[1]))
 
-                print("-----------")
-                print("Position: " + str(position))
                 print("Goal: " + str(pos))
                 projectedPath = shortestPath(position, pos, visitedCells)
 
@@ -87,7 +86,6 @@ def startGame(prolog):
                 position = traversalResult[0]
                 direction = traversalResult[2]
                 points += traversalResult[3]
-                list(prolog.query("visit(%s,%s,%s)" % (position[0], position[1], direction)))
 
                 print("delta points: " + str(traversalResult[3]))
 
@@ -172,14 +170,8 @@ def startGame(prolog):
 
         print("-----------")
 
-        list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
-        # revert to 2nd to last position if we bump
-        bump = len(list(prolog.query("bump(%s,%s,%s)" % (position[0],position[1],direction)))) > 0
 
-        # if bumped, just move back. Cost of bump already taken into account.
-        if bump:
-            position = previousPosition
-            points += 1
+
 
 
         print(position)
@@ -233,6 +225,16 @@ def traversePath(position, direction, projectedPath):
         previousPosition = position
         position = cell
 
+    # visit
+    list(prolog.query("visit(%s,%s,%s)" % (position[0],position[1],direction)))
+
+    # revert to 2nd to last position if we bump
+    bump = len(list(prolog.query("bump(%s,%s,%s)" % (position[0],position[1],direction)))) > 0
+
+    # if bumped, just move back. Cost of bump already taken into account.
+    if bump:
+        position = previousPosition
+        cost += 1
     return (position, previousPosition, direction, cost)
 
 def directionToFaceNext(origin, next):
