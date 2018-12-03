@@ -10,7 +10,9 @@
 :- dynamic scream/0.
 :- dynamic visitedInBounds/2.
 
+% ###################### GAME STATE ######################
 
+% removes all predicate assignments, used for resetting to a new game.
 initPredicates() :-
   retractall(width(_)),
   retractall(height(_)),
@@ -25,94 +27,12 @@ initPredicates() :-
   retractall(visitedInBounds(_,_)),
   retractall(visited(_,_)).
 
+% Position (X,Y) will lead to death by wumpus
 dieFromWumpus(X,Y) :-
   hasWumpus(X,Y),
   not(scream()).
 
-isDead(X,Y) :-
-  hasPit(X,Y);
-  hasWumpus(X,Y).
-
-outOfFoundBounds(X,Y) :-
-  bump(BX,BY,BD),
-  (BD == 0 -> Y >= BY; true),
-  (BD == 2 -> Y =< BY; true),
-  (BD == 1 -> X >= BX; true),
-  (BD == 3 -> X =< BX; true).
-
-
-% hidden information
-
-neighbor(X1, Y1, X2, Y2) :-
-  cell(X1, Y1),
-  cell(X2, Y2),
-  (above(X1, Y1, X2, Y2);
-  below(X1, Y1, X2, Y2);
-  right(X1, Y1, X2, Y2);
-  left(X1, Y1, X2, Y2)).
-
-
-above(X1, Y1, X2, Y2) :-
-  X2 =:= X1,
-  Y2 =:= Y1+1.
-
-below(X1, Y1, X2, Y2) :-
-  X2 =:= X1,
-  Y2 =:= Y1-1.
-
-right(X1, Y1, X2, Y2) :-
-  Y2 =:= Y1,
-  X2 =:= X1+1.
-
-left(X1, Y1, X2, Y2) :-
-  Y2 =:= Y1,
-  X2 =:= X1-1.
-
-% predicates for determining percept assignments.
-
-hasStench(X, Y) :-
-  neighbor(X, Y, NX, NY),
-  hasWumpus(NX, NY).
-
-hasBreeze(X, Y) :-
-  neighbor(X, Y, NX, NY),
-  hasPit(NX, NY).
-
-hasGlitter(X, Y) :-
-  hasGold(X, Y).
-
-% predicates for deducing whether entities exist given perception.
-
-noPit(X, Y) :-
-  neighbor(X, Y, NX, NY),
-  visited(NX, NY),
-  inBounds(NX, NY),
-  not(foundBreeze(NX, NY)).
-
-noWumpus(X, Y) :-
-  scream();
-  (neighbor(X, Y, NX, NY),
-  visited(NX, NY),
-  inBounds(NX, NY),
-  not(foundStench(NX, NY))).
-
-neighborVisited(X, Y) :-
-  neighbor(X, Y, NX, NY),
-  visited(NX, NY).
-
-isSafe(X, Y) :-
-  visited(X,Y);
-  (noWumpus(X, Y),
-  noPit(X, Y)).
-
-isUnvisitedSafe(X, Y) :-
-  cell(X,Y),
-  not(visited(X,Y)),
-  isSafe(X,Y),
-  not(outOfFoundBounds(X,Y)).
-
-% for discovering new percepts at a visited cell.
-
+% Cell (X,Y) is in bounds of the current 'width' and 'height'
 inBounds(X, Y) :-
   cell(X,Y),
   width(W),
@@ -122,6 +42,61 @@ inBounds(X, Y) :-
   Y >= 1,
   Y =< H.
 
+% (X1, Y1) and (X2,Y2) are adjacent to one another.
+neighbor(X1, Y1, X2, Y2) :-
+  cell(X1, Y1),
+  cell(X2, Y2),
+  (above(X1, Y1, X2, Y2);
+  below(X1, Y1, X2, Y2);
+  right(X1, Y1, X2, Y2);
+  left(X1, Y1, X2, Y2)).
+
+% (X2, Y2) is above (X1, Y1)
+above(X1, Y1, X2, Y2) :-
+  X2 =:= X1,
+  Y2 =:= Y1+1.
+
+% (X2, Y2) is below (X1, Y1)
+below(X1, Y1, X2, Y2) :-
+  X2 =:= X1,
+  Y2 =:= Y1-1.
+
+% (X2, Y2) is right (X1, Y1)
+right(X1, Y1, X2, Y2) :-
+  Y2 =:= Y1,
+  X2 =:= X1+1.
+
+% (X2, Y2) is left (X1, Y1)
+left(X1, Y1, X2, Y2) :-
+  Y2 =:= Y1,
+  X2 =:= X1-1.
+
+% ###################### PERCEPTS ######################
+
+% Find all percepts available at (X,Y) by asserting their existence ('foundX')
+gatherPercepts(X, Y) :-
+  inBounds(X,Y),
+  (hasBreeze(X, Y) -> assertz(foundBreeze(X, Y)); true),
+  (hasStench(X, Y) -> assertz(foundStench(X, Y)); true),
+  (hasGlitter(X, Y) -> assertz(foundGlitter(X, Y)); true).
+
+% (X,Y) has a stench if it neighbors a wumpus (PLAYER CAN'T USE)
+hasStench(X, Y) :-
+  neighbor(X, Y, NX, NY),
+  hasWumpus(NX, NY).
+
+% (X,Y) has a breeze if it neighbors a pit (PLAYER CAN'T USE)
+hasBreeze(X, Y) :-
+  neighbor(X, Y, NX, NY),
+  hasPit(NX, NY).
+
+% (X,Y) has glitter if it has a gold on it (PLAYER CAN'T USE)
+hasGlitter(X, Y) :-
+  hasGold(X, Y).
+
+% ###################### ACTIONS ######################
+
+% Visit cell (X,Y) facing direction D
 visit(X, Y, D) :-
   (visited(X,Y) -> false; true),
   assertz(visited(X,Y)),
@@ -136,25 +111,67 @@ visit(X, Y, D) :-
   assertz(cell(XP,Y)),
   gatherPercepts(X, Y).
 
-gatherPercepts(X, Y) :-
-  inBounds(X,Y),
-  (hasBreeze(X, Y) -> assertz(foundBreeze(X, Y)); true),
-  (hasStench(X, Y) -> assertz(foundStench(X, Y)); true),
-  (hasGlitter(X, Y) -> assertz(foundGlitter(X, Y)); true).
+% Kill the wumpus
+killWumpus() :-
+  assertz(scream()).
 
+% ###################### CAUTIOUS INFERENCE ######################
+
+% Pit doesn't exist at X,Y if we have visited a neighbor of X,Y and it did not
+% have a breeze percept.
+noPit(X, Y) :-
+  neighbor(X, Y, NX, NY),
+  visited(NX, NY),
+  inBounds(NX, NY),
+  not(foundBreeze(NX, NY)).
+
+% Wumpus doesn't exist at X,Y if we have visited a neighbor of X,Y and it did
+% not have a stench percept.
+noWumpus(X, Y) :-
+  scream();
+  (neighbor(X, Y, NX, NY),
+  visited(NX, NY),
+  inBounds(NX, NY),
+  not(foundStench(NX, NY))).
+
+% A cell X,Y is safe overall if (1) we have visited it, or (2) we have deduced
+% that it has no pit and no wumpus.
+isSafe(X, Y) :-
+  visited(X,Y);
+  (noWumpus(X, Y),
+  noPit(X, Y)).
+
+% A cell X,Y that satisfies both 'isSafe' and has not been visited yet.
+isUnvisitedSafe(X, Y) :-
+  cell(X,Y),
+  not(visited(X,Y)),
+  isSafe(X,Y),
+  not(outOfFoundBounds(X,Y)).
+
+% A cell X,Y is the location of the wumpus if we know two neighbors that we
+% have discovered stenches at, and the cell is not confirmed as safe.
 foundWumpus(X,Y) :-
   neighbor(X,Y,AX,AY),
   neighbor(X,Y,BX,BY),
   not((AX == BX, AY == BY)),
-  hasStench(AX, AY),
-  hasStench(BX, BY),
+  foundStench(AX, AY),
+  foundStench(BX, BY),
   not(isSafe(X,Y)),
   !.
 
-% kill the wumpus
-killWumpus() :-
-  assertz(scream()).
+% Player can infer that X,Y is out of bounds given the coordinats of when he
+% bumped into a wall and the direction he was going.
+outOfFoundBounds(X,Y) :-
+  bump(BX,BY,BD),
+  (BD == 0 -> Y >= BY; true),
+  (BD == 2 -> Y =< BY; true),
+  (BD == 1 -> X >= BX; true),
+  (BD == 3 -> X =< BX; true).
 
+% ###################### BEST MOVE INFERENCE ######################
+
+% Unvisited cell (X,Y) is a danger because a neighbor (DX,DY) has a found breeze
+% percept.
 dangerBreeze(X,Y, DX, DY) :-
   cell(X,Y),
   cell(DX,DY),
@@ -162,6 +179,8 @@ dangerBreeze(X,Y, DX, DY) :-
   neighbor(X,Y,DX,DY),
   (foundBreeze(DX,DY)).
 
+% Unvisited cell (X,Y) is a danger because a neighbor (DX,DY) has a found stench
+% percept.
 dangerStench(X,Y,DX,DY) :-
   cell(X,Y),
   cell(DX,DY),

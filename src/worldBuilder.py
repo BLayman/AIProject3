@@ -36,23 +36,27 @@ def generateWorld(width, height, startX, startY):
 
     return genWorld
 
+# Generates a wumpus world given a text file that uses comma separated lines where
+# each value is any combination of 'P' for pit, 'G' for gold, 'W' for wumpus, or
+# any other symbol for a blank space.
 def genWorldFromTxt(fileName):
     theMap = []
     with open(fileName, 'r') as txtMap:
         for line in txtMap:
-            temp = []
-            line = line.replace("\n", '')
-            line = line.split(',')
+            temp = [] # insert cells into this that correspond to text file's line.
+            line = line.replace("\n", '').split(',') # line from text file
+            # iterate over symbols at each cell position in text file...
             for string in line:
                 cell = {'pit': False, 'gold': False, 'wumpus': False}
+                # If a P,G, or W exists at a cell, then add related key,value pair.
                 if 'P' in string:
                     cell['pit'] = True
                 if 'G' in string:
                     cell['gold'] = True
                 if 'W' in string:
                     cell['wumpus'] = True
-                temp.append(cell)
-            theMap.append(temp)
+                temp.append(cell) # add cell to our running list
+            theMap.append(temp) # add our list of cells to our map
     returnMap = []
     while len(theMap) > 0:
         returnMap.append(theMap.pop())
@@ -63,6 +67,10 @@ def genWorldFromTxt(fileName):
 def assumeWorld(prolog, world):
     height = len(world)
     width = len(world[0])
+
+    prolog.assertz("cell(1,1)")
+    prolog.assertz("width(%d)" % width)
+    prolog.assertz("height(%d)" % height)
 
     for x in range(0, width):
         for y in range(0, height):
@@ -121,9 +129,3 @@ if __name__ == '__main__':
     print("Gold: \n" + str(list(prolog.query("hasGold(X,Y)"))))
     # wumpus
     print("Wumpus: \n" + str(list(prolog.query("hasWumpus(X,Y)"))))
-    # breezes
-    print("Breeze: \n" + str(list(prolog.query("hasBreeze(X,Y)"))))
-    # glitters
-    print("Glitter: \n" + str(list(prolog.query("hasGlitter(X,Y)"))))
-    # stenches
-    print("Stench: \n" + str(list(prolog.query("hasStench(X,Y)"))))
