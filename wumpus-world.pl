@@ -8,7 +8,7 @@
 :- dynamic visited/2.
 :- dynamic bump/3.
 :- dynamic scream/0.
-:- visitedInBounds/2.
+:- dynamic visitedInBounds/2.
 
 dieFromWumpus(X,Y) :-
   hasWumpus(X,Y),

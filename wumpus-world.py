@@ -42,7 +42,7 @@ def startGame(prolog):
             pathBackToStart = shortestPath(position, startPosition, visitedCells)
             print("Goal: " + str(startPosition))
             print("Path to start: " + str(pathBackToStart))
-            traversalResult = traversePath(position, direction, pathBackToStart)
+            traversalResult = traversePath(prolog,position, direction, pathBackToStart)
 
             position = traversalResult[0]
             direction = traversalResult[2]
@@ -73,7 +73,7 @@ def startGame(prolog):
             if len(wumpusList) == 0 or len(wumpusKilled) != 0:
                 print("Position: " + str(position))
                 print("Wumpus could not be found!")
-                pos = getBestMove()
+                pos = getBestMove(prolog)
                 print("Guessing best move is to %d %d" % (pos[0], pos[1]))
 
                 print("Goal: " + str(pos))
@@ -81,7 +81,7 @@ def startGame(prolog):
 
                 print("Projected path: " + str(projectedPath))
 
-                traversalResult = traversePath(position, direction, projectedPath)
+                traversalResult = traversePath(prolog,position, direction, projectedPath)
 
                 position = traversalResult[0]
                 direction = traversalResult[2]
@@ -123,7 +123,7 @@ def startGame(prolog):
             # TRAVERSE TO NEAREST POSITION TO SHOOT FROM
             #
 
-            traversalResult = traversePath(position, direction, pathToShootPosition)
+            traversalResult = traversePath(prolog,position, direction, pathToShootPosition)
 
             position = traversalResult[0]
             direction = traversalResult[2]
@@ -159,7 +159,7 @@ def startGame(prolog):
 
 
 
-        traversalResult = traversePath(position, direction, projectedPath)
+        traversalResult = traversePath(prolog,position, direction, projectedPath)
 
         position = traversalResult[0]
         previousPosition = traversalResult[1]
@@ -178,7 +178,7 @@ def startGame(prolog):
 
     print(list(prolog.query("visited(X,Y)")))
 
-def getBestMove():
+def getBestMove(prolog):
     l = list(prolog.query("dangerBreeze(X,Y, NX, NY)"))
     #Set of positions for breezes
     theSet = set()
@@ -210,7 +210,7 @@ def getBestMove():
     #Return the position with the minimum danger neighbors
     return pos
 
-def traversePath(position, direction, projectedPath):
+def traversePath(prolog,position, direction, projectedPath):
     cost = 0
     previousPosition = position
     for cell in projectedPath:
@@ -345,25 +345,40 @@ def nextMove(position, safeCells):
     nextCell = random.choice(adjacentCells)
     return nextCell
 
+def runABunch(n, size):
+    for i in range(0,n):
+        prolog = Prolog()
+        prolog.consult("wumpus-world.pl")
+        world = mapGen.generateWorld(size, size, 0, 0)
+        mapGen.printWorld(world)
+        mapGen.assumeWorld(prolog, world)
+        prolog.assertz("cell(1,1)")
+        prolog.assertz("width(%d)" % size)
+        prolog.assertz("height(%d)" % size)
 
+        startGame(prolog)
 
 
 if __name__ == '__main__':
     size = int(sys.argv[1])
-    fileName = sys.argv[2]
-    prolog = Prolog()
-    prolog.consult("wumpus-world.pl")
-    if fileName == 'random':
-        world = mapGen.generateWorld(size, size, 0, 0)
-    else:
-        world = mapGen.genWorldFromTxt(fileName)
-    mapGen.printWorld(world)
-    mapGen.assumeWorld(prolog, world)
-    prolog.assertz("cell(1,1)")
-    prolog.assertz("width(%d)" % size)
-    prolog.assertz("height(%d)" % size)
+    runABunch(100, size)
 
-
-    startGame(prolog)
-
-    #print(shortestPath((1,1), (4,4), [(1,1),(2,1),(3,1),(4,1),(4,2),(2,2),(2,3),(2,4),(3,4),(4,4),(4,3)]))
+    #
+    # size = int(sys.argv[1])
+    # fileName = sys.argv[2]
+    # prolog = Prolog()
+    # prolog.consult("wumpus-world.pl")
+    # if fileName == 'random':
+    #     world = mapGen.generateWorld(size, size, 0, 0)
+    # else:
+    #     world = mapGen.genWorldFromTxt(fileName)
+    # mapGen.printWorld(world)
+    # mapGen.assumeWorld(prolog, world)
+    # prolog.assertz("cell(1,1)")
+    # prolog.assertz("width(%d)" % size)
+    # prolog.assertz("height(%d)" % size)
+    #
+    #
+    # startGame(prolog)
+    #
+    # print(shortestPath((1,1), (4,4), [(1,1),(2,1),(3,1),(4,1),(4,2),(2,2),(2,3),(2,4),(3,4),(4,4),(4,3)]))
