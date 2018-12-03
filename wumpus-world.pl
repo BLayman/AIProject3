@@ -10,6 +10,21 @@
 :- dynamic scream/0.
 :- dynamic visitedInBounds/2.
 
+
+initPredicates() :-
+  retractall(width(_)),
+  retractall(height(_)),
+  retractall(hasGold(_,_)),
+  retractall(hasPit(_,_)),
+  retractall(hasWumpus(_,_)),
+  retractall(scream()),
+  retractall(cell(_)),
+  retractall(foundBreeze(_,_)),
+  retractall(foundGlitter(_,_)),
+  retractall(foundStench(_,_)),
+  retractall(visitedInBounds(_,_)),
+  retractall(visited(_,_)).
+
 dieFromWumpus(X,Y) :-
   hasWumpus(X,Y),
   not(scream()).

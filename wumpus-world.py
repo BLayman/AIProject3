@@ -56,8 +56,12 @@ def startGame(prolog):
         unvisitedCellsDict = list(prolog.query("isUnvisitedSafe(X,Y)"))
         unvisitedCells = toTupleList(unvisitedCellsDict)
 
+        print(unvisitedCells)
+
         visitedCellsDict = list(prolog.query("visitedInBounds(X,Y)"))
         visitedCells = toTupleList(visitedCellsDict)
+
+        print(visitedCells)
 
         if len(unvisitedCells) == 0:
             print("Could not find any more safe cells, attempting to kill wumpus...")
@@ -349,6 +353,9 @@ def runABunch(n, size):
     for i in range(0,n):
         prolog = Prolog()
         prolog.consult("wumpus-world.pl")
+
+        list(prolog.query("initPredicates()"))
+
         world = mapGen.generateWorld(size, size, 0, 0)
         mapGen.printWorld(world)
         mapGen.assumeWorld(prolog, world)
