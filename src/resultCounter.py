@@ -10,16 +10,19 @@ class ResultCounter:
         self.wumpusDeaths = 0
         self.wins = 0
         self.pitDeaths = 0
-        self.scores = []
+        self.winScores = []
+        self.deathScores = []
         self.moves = []
     def addResults(self, results):
         if results[2] == 'Win':
             self.wins += 1
+            self.winScores.append(results[0])
         if results[2] == 'Wumpus':
             self.wumpusDeaths +=1
+            self.deathScores.append(results[0])
         if results[2] == 'Pit':
             self.pitDeaths += 1
-        self.scores.append(results[0])
+            self.deathScores.append(results[0])
         self.moves.append(results[1])
     def graphEndStats(self):
         reasons = ('Wins', 'Wumpus Deaths', 'Pit Deaths')
@@ -32,15 +35,10 @@ class ResultCounter:
         plt.title('Reason Game Ended')
 
         plt.show()
+
     def graphPointsHist(self):
-        histValues, histEdges = np.histogram(self.scores)
-
-        y_pos = np.arange(len(histEdges))
-
-        plt.bar(y_pos, histEdges, align='center', alpha=0.5)
-        plt.xticks(y_pos, histValues)
-        plt.ylabel('some hist y')
-        plt.title('some hist x')
+        num_bins = 10
+        n, bins, patches = plt.hist(self.winScores, num_bins, facecolor='blue', alpha=0.5)
         plt.show()
 
     def graphCellHist(self):

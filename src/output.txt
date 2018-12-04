@@ -1,0 +1,3453 @@
++----+----+----+----+
+|    |G   |    |P   |
++----+----+----+----+
+|P   |    |P   |    |
++----+----+----+----+
+|    |    |    |W   |
++----+----+----+----+
+|    |    |P   |P   |
++----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (0, 1)
+Projected path: [(1, 1), (0, 1)]
+Points for: -2
+-----------
+Position: (1, 1)
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points for: -2
+-----------
+Position: (1, 1)
+Goal: (2, 1)
+Projected path: [(2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1006
+entered: 4
+##################
+
++----+----+----+----+
+|P   |    |    |P   |
++----+----+----+----+
+|    |    |    |W   |
++----+----+----+----+
+|P   |    |    |    |
++----+----+----+----+
+|    |    |    |G   |
++----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |P   |    |P   |
++----+----+----+----+
+|P   |    |W   |    |
++----+----+----+----+
+|    |G   |P   |    |
++----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+
+|P   |    |P   |    |
++----+----+----+----+
+|    |P   |    |    |
++----+----+----+----+
+|    |    |P   |    |
++----+----+----+----+
+|    |WP  |    |G   |
++----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (2, 1)
+Cells in range: [(1, 1), (2, 2)]
+Closest cell to shoot from: (2, 2)
+Cost to get to cell: 0
+Cost to shoot arrow: -10
+End at: (2, 2)
+-----------
+Position: (2, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 3
+Goal: (0, 3)
+Projected path: [(1, 2), (1, 3), (0, 3)]
+Points so far: -16
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 4
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points so far: -17
+-----------
+Position: (1, 4)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1017
+entered: 5
+##################
+
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |    |    |P   |
++----+----+----+----+
+|W   |    |    |G   |
++----+----+----+----+
+|    |P   |    |    |
++----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from wumpus!
+
+##################
+GAME HAS FINISHED!
+result:  Died from Wumpus
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+
+|W   |    |    |GP  |
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |P   |P   |    |
++----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -5
+-----------
+Position: (2, 3)
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points for: -6
+-----------
+Position: (2, 4)
+Goal: (3, 3)
+Projected path: [(2, 3), (3, 3)]
+Points for: -8
+-----------
+Position: (3, 3)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -9
+-----------
+Position: (3, 2)
+Goal: (3, 4)
+Projected path: [(3, 3), (3, 4)]
+Points for: -11
+-----------
+Position: (3, 4)
+Goal: (4, 3)
+Projected path: [(3, 3), (4, 3)]
+Points for: -13
+-----------
+Position: (4, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (1, 4)
+Cells in range: [(1, 2), (1, 3), (2, 4), (3, 4), (1, 1)]
+Closest cell to shoot from: (3, 4)
+Cost to get to cell: -2
+Cost to shoot arrow: -10
+End at: (3, 4)
+-----------
+Position: (3, 4)
+Goal: (2, 5)
+Projected path: [(2, 4), (2, 5)]
+Points for: -26
+-----------
+Position: (2, 4)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -27
+-----------
+Position: (1, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 5
+Goal: (3, 5)
+Projected path: [(2, 4), (3, 4), (3, 5)]
+Points so far: -29
+-----------
+Position: (3, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 1
+Goal: (3, 1)
+Projected path: [(3, 3), (3, 2), (3, 1)]
+Points so far: -32
+-----------
+Position: (3, 1)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1032
+entered: 12
+##################
+
++----+----+----+----+
+|    |    |P   |    |
++----+----+----+----+
+|P   |G   |    |    |
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |    |    |W   |
++----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -4
+-----------
+Position: (3, 1)
+Goal: (2, 2)
+Projected path: [(2, 1), (2, 2)]
+Points for: -6
+-----------
+Position: (2, 2)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -7
+-----------
+Position: (3, 2)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -8
+-----------
+Position: (4, 2)
+Goal: (3, 3)
+Projected path: [(3, 2), (3, 3)]
+Points for: -10
+-----------
+Position: (3, 3)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -11
+-----------
+Position: (2, 3)
+Found gold!
+Goal: (1, 1)
+Path to start: [(2, 2), (1, 2), (1, 1)]
+Cost to get back to start: -3
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   986
+entered: 9
+##################
+
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |W   |    |G   |
++----+----+----+----+
+|    |    |P   |    |
++----+----+----+----+
+|    |    |    |P   |
++----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Goal: (2, 1)
+Projected path: [(2, 1)]
+Points for: -5
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -6
+-----------
+Position: (3, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (2, 3)
+Cells in range: [(1, 3), (2, 1), (2, 2)]
+Closest cell to shoot from: (2, 1)
+Cost to get to cell: -1
+Cost to shoot arrow: -10
+End at: (2, 1)
+-----------
+Position: (2, 1)
+Goal: (2, 3)
+Projected path: [(2, 2), (2, 3)]
+Points for: -19
+-----------
+Position: (2, 3)
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points for: -20
+-----------
+Position: (2, 4)
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points for: -21
+-----------
+Position: (3, 4)
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points for: -22
+-----------
+Position: (4, 4)
+Goal: (5, 4)
+Projected path: [(5, 4)]
+Points for: -22
+-----------
+Position: (4, 4)
+Goal: (4, 3)
+Projected path: [(4, 3)]
+Points for: -23
+-----------
+Position: (4, 3)
+Found gold!
+Goal: (1, 1)
+Path to start: [(4, 4), (3, 4), (2, 4), (2, 3), (1, 3), (1, 2), (1, 1)]
+Cost to get back to start: -7
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   970
+entered: 11
+##################
+
++----+----+----+----+
+|P   |W   |    |G   |
++----+----+----+----+
+|P   |    |    |P   |
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -4
+-----------
+Position: (3, 1)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -5
+-----------
+Position: (3, 2)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -6
+-----------
+Position: (4, 2)
+Goal: (4, 1)
+Projected path: [(4, 1)]
+Points for: -7
+-----------
+Position: (4, 1)
+Goal: (3, 3)
+Projected path: [(3, 1), (3, 2), (3, 3)]
+Points for: -10
+-----------
+Position: (3, 3)
+Goal: (2, 2)
+Projected path: [(3, 2), (2, 2)]
+Points for: -12
+-----------
+Position: (2, 2)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -13
+-----------
+Position: (2, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 4
+Goal: (3, 4)
+Projected path: [(3, 3), (3, 4)]
+Points so far: -15
+-----------
+Position: (3, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (2, 4)
+Cells in range: [(2, 1), (2, 3), (2, 2), (3, 4)]
+Closest cell to shoot from: (3, 4)
+Cost to get to cell: 0
+Cost to shoot arrow: -10
+End at: (3, 4)
+-----------
+Position: (3, 4)
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points for: -26
+-----------
+Position: (4, 4)
+Found gold!
+Goal: (1, 1)
+Path to start: [(3, 4), (3, 3), (3, 2), (3, 1), (2, 1), (1, 1)]
+Cost to get back to start: -6
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   968
+entered: 12
+##################
+
++----+----+----+----+
+|    |    |W   |    |
++----+----+----+----+
+|    |    |    |    |
++----+----+----+----+
+|    |    |    |G   |
++----+----+----+----+
+|    |    |P   |    |
++----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -3
+-----------
+Position: (1, 4)
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points for: -4
+-----------
+Position: (2, 4)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -5
+-----------
+Position: (2, 3)
+Goal: (3, 3)
+Projected path: [(3, 3)]
+Points for: -6
+-----------
+Position: (3, 3)
+Goal: (2, 2)
+Projected path: [(2, 3), (2, 2)]
+Points for: -8
+-----------
+Position: (2, 2)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -9
+-----------
+Position: (3, 2)
+Goal: (2, 1)
+Projected path: [(2, 2), (2, 1)]
+Points for: -11
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (3, 4)
+Cells in range: [(3, 2), (3, 3), (1, 4), (2, 4)]
+Closest cell to shoot from: (3, 2)
+Cost to get to cell: -2
+Cost to shoot arrow: -10
+End at: (3, 2)
+-----------
+Position: (3, 2)
+Goal: (3, 4)
+Projected path: [(3, 3), (3, 4)]
+Points for: -25
+-----------
+Position: (3, 4)
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points for: -26
+-----------
+Position: (4, 4)
+Goal: (4, 3)
+Projected path: [(4, 3)]
+Points for: -27
+-----------
+Position: (4, 3)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -28
+-----------
+Position: (4, 2)
+Found gold!
+Goal: (1, 1)
+Path to start: [(3, 2), (2, 2), (1, 2), (1, 1)]
+Cost to get back to start: -4
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   968
+entered: 14
+##################
+
++----+----+----+----+----+
+|    |P   |    |P   |    |
++----+----+----+----+----+
+|P   |    |    |    |P   |
++----+----+----+----+----+
+|    |    |W   |P   |    |
++----+----+----+----+----+
+|P   |G   |P   |    |    |
++----+----+----+----+----+
+|    |    |    |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+
+|    |P   |    |    |    |
++----+----+----+----+----+
+|    |P   |    |P   |    |
++----+----+----+----+----+
+|    |    |WG  |    |P   |
++----+----+----+----+----+
+|    |    |    |P   |P   |
++----+----+----+----+----+
+|    |    |    |    |P   |
++----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -3
+-----------
+Position: (1, 4)
+Goal: (2, 3)
+Projected path: [(1, 3), (2, 3)]
+Points for: -5
+-----------
+Position: (2, 3)
+Goal: (2, 2)
+Projected path: [(2, 2)]
+Points for: -6
+-----------
+Position: (2, 2)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -7
+-----------
+Position: (3, 2)
+Goal: (2, 1)
+Projected path: [(2, 2), (2, 1)]
+Points for: -9
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -10
+-----------
+Position: (3, 1)
+Goal: (4, 1)
+Projected path: [(4, 1)]
+Points for: -11
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (3, 3)
+Cells in range: [(3, 2), (1, 3), (3, 1), (2, 3)]
+Closest cell to shoot from: (3, 1)
+Cost to get to cell: -1
+Cost to shoot arrow: -10
+End at: (3, 1)
+-----------
+Position: (3, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 0
+Goal: (4, 0)
+Projected path: [(4, 1), (4, 0)]
+Points so far: -23
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 5 1
+Goal: (5, 1)
+Projected path: [(5, 1)]
+Points so far: -24
+-----------
+Position: (5, 1)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1024
+entered: 11
+##################
+
++----+----+----+----+----+
+|    |P   |    |    |P   |
++----+----+----+----+----+
+|    |    |    |W   |    |
++----+----+----+----+----+
+|    |    |    |    |    |
++----+----+----+----+----+
+|GP  |    |    |    |    |
++----+----+----+----+----+
+|    |    |P   |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+
+|P   |    |    |P   |G   |
++----+----+----+----+----+
+|    |    |P   |    |    |
++----+----+----+----+----+
+|P   |    |    |    |P   |
++----+----+----+----+----+
+|    |P   |    |    |W   |
++----+----+----+----+----+
+|    |    |    |    |P   |
++----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1006
+entered: 4
+##################
+
++----+----+----+----+----+
+|    |    |    |P   |    |
++----+----+----+----+----+
+|    |W   |P   |    |P   |
++----+----+----+----+----+
+|    |    |P   |    |    |
++----+----+----+----+----+
+|    |    |G   |P   |    |
++----+----+----+----+----+
+|    |    |    |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -3
+-----------
+Position: (1, 4)
+Goal: (2, 3)
+Projected path: [(1, 3), (2, 3)]
+Points for: -5
+-----------
+Position: (2, 3)
+Goal: (2, 2)
+Projected path: [(2, 2)]
+Points for: -6
+-----------
+Position: (2, 2)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -7
+-----------
+Position: (3, 2)
+Found gold!
+Goal: (1, 1)
+Path to start: [(2, 2), (1, 2), (1, 1)]
+Cost to get back to start: -3
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   990
+entered: 7
+##################
+
++----+----+----+----+----+
+|    |P   |    |P   |P   |
++----+----+----+----+----+
+|    |    |P   |    |    |
++----+----+----+----+----+
+|    |P   |    |    |    |
++----+----+----+----+----+
+|    |    |G   |    |P   |
++----+----+----+----+----+
+|    |W   |    |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (2, 1)
+Cells in range: [(1, 1), (2, 2)]
+Closest cell to shoot from: (2, 2)
+Cost to get to cell: 0
+Cost to shoot arrow: -10
+End at: (2, 2)
+-----------
+Position: (2, 2)
+Goal: (2, 1)
+Projected path: [(2, 1)]
+Points for: -15
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -16
+-----------
+Position: (3, 1)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -17
+-----------
+Position: (3, 2)
+Found gold!
+Goal: (1, 1)
+Path to start: [(3, 1), (2, 1), (1, 1)]
+Cost to get back to start: -3
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   980
+entered: 7
+##################
+
++----+----+----+----+----+
+|    |G   |    |    |P   |
++----+----+----+----+----+
+|    |    |    |    |P   |
++----+----+----+----+----+
+|    |    |    |    |P   |
++----+----+----+----+----+
+|    |P   |P   |    |    |
++----+----+----+----+----+
+|    |    |W   |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -7
+-----------
+Position: (2, 3)
+Goal: (1, 4)
+Projected path: [(1, 3), (1, 4)]
+Points for: -9
+-----------
+Position: (1, 4)
+Goal: (1, 5)
+Projected path: [(1, 5)]
+Points for: -10
+-----------
+Position: (1, 5)
+Goal: (2, 5)
+Projected path: [(2, 5)]
+Points for: -11
+-----------
+Position: (2, 5)
+Found gold!
+Goal: (1, 1)
+Path to start: [(1, 5), (1, 4), (1, 3), (1, 2), (1, 1)]
+Cost to get back to start: -5
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   984
+entered: 8
+##################
+
++----+----+----+----+----+
+|    |W   |    |    |    |
++----+----+----+----+----+
+|    |P   |    |    |P   |
++----+----+----+----+----+
+|    |GP  |    |P   |P   |
++----+----+----+----+----+
+|P   |P   |    |    |    |
++----+----+----+----+----+
+|    |P   |    |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+
+|    |    |    |    |GP  |
++----+----+----+----+----+
+|    |    |P   |P   |    |
++----+----+----+----+----+
+|    |    |    |    |WP  |
++----+----+----+----+----+
+|    |    |    |P   |P   |
++----+----+----+----+----+
+|    |    |    |    |    |
++----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -3
+-----------
+Position: (1, 4)
+Goal: (1, 5)
+Projected path: [(1, 5)]
+Points for: -4
+-----------
+Position: (1, 5)
+Goal: (1, 6)
+Projected path: [(1, 6)]
+Points for: -4
+-----------
+Position: (1, 5)
+Goal: (2, 5)
+Projected path: [(2, 5)]
+Points for: -5
+-----------
+Position: (2, 5)
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points for: -6
+-----------
+Position: (2, 4)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -7
+-----------
+Position: (2, 3)
+Goal: (3, 3)
+Projected path: [(3, 3)]
+Points for: -8
+-----------
+Position: (3, 3)
+Goal: (3, 5)
+Projected path: [(2, 3), (2, 4), (2, 5), (3, 5)]
+Points for: -12
+-----------
+Position: (3, 5)
+Goal: (2, 2)
+Projected path: [(2, 5), (2, 4), (2, 3), (2, 2)]
+Points for: -16
+-----------
+Position: (2, 2)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -17
+-----------
+Position: (3, 2)
+Goal: (2, 1)
+Projected path: [(2, 2), (2, 1)]
+Points for: -19
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -20
+-----------
+Position: (3, 1)
+Goal: (4, 1)
+Projected path: [(4, 1)]
+Points for: -21
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 0
+Goal: (4, 0)
+Projected path: [(4, 0)]
+Points so far: -21
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 3
+Goal: (4, 3)
+Projected path: [(3, 1), (3, 2), (3, 3), (4, 3)]
+Points so far: -25
+-----------
+Position: (4, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 5
+Goal: (4, 5)
+Projected path: [(3, 3), (2, 3), (2, 4), (2, 5), (3, 5), (4, 5)]
+Points so far: -31
+-----------
+Position: (4, 5)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 5 5
+Goal: (5, 5)
+Projected path: [(5, 5)]
+Points so far: -32
+-----------
+Position: (5, 5)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1032
+entered: 18
+##################
+
++----+----+----+----+----+
+|    |    |    |P   |G   |
++----+----+----+----+----+
+|    |    |    |    |P   |
++----+----+----+----+----+
+|    |    |    |P   |P   |
++----+----+----+----+----+
+|P   |    |W   |    |    |
++----+----+----+----+----+
+|    |P   |    |P   |    |
++----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |WP  |    |P   |GP  |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |P   |P   |
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |P   |P   |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points so far: -2
+-----------
+Position: (1, 3)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1002
+entered: 3
+##################
+
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |P   |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|G   |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |W   |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Found gold!
+Goal: (1, 1)
+Path to start: [(1, 1)]
+Cost to get back to start: -1
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   998
+entered: 2
+##################
+
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |P   |P   |W   |
++----+----+----+----+----+----+----+----+
+|    |G   |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1006
+entered: 4
+##################
+
++----+----+----+----+----+----+----+----+
+|    |    |    |    |WP  |P   |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |G   |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |P   |P   |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Goal: (2, 1)
+Projected path: [(2, 1)]
+Points for: -5
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -6
+-----------
+Position: (3, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 1
+Goal: (4, 1)
+Projected path: [(4, 1)]
+Points so far: -7
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 0
+Goal: (4, 0)
+Projected path: [(4, 0)]
+Points so far: -7
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 0
+Goal: (3, 0)
+Projected path: [(3, 1), (3, 0)]
+Points so far: -8
+-----------
+Position: (3, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 3
+Goal: (0, 3)
+Projected path: [(2, 1), (2, 2), (1, 2), (1, 3), (0, 3)]
+Points so far: -12
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 5 1
+Goal: (5, 1)
+Projected path: [(1, 2), (2, 2), (2, 1), (3, 1), (4, 1), (5, 1)]
+Points so far: -18
+-----------
+Position: (5, 1)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1018
+entered: 8
+##################
+
++----+----+----+----+----+----+----+----+
+|P   |P   |    |P   |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|P   |P   |    |    |P   |P   |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+
+|G   |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|P   |P   |W   |P   |P   |P   |    |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |P   |P   |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+----+----+----+
+|P   |W   |    |    |    |P   |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|P   |P   |    |    |    |G   |    |    |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |P   |P   |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |P   |    |P   |
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |P   |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|G   |P   |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |W   |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1006
+entered: 4
+##################
+
++----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |P   |    |    |G   |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |P   |P   |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |W   |    |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |G   |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |P   |P   |    |P   |P   |    |W   |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -3
+-----------
+Position: (2, 3)
+Goal: (2, 2)
+Projected path: [(2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Goal: (1, 4)
+Projected path: [(1, 2), (1, 3), (1, 4)]
+Points for: -7
+-----------
+Position: (1, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 2
+Goal: (3, 2)
+Projected path: [(1, 3), (1, 2), (2, 2), (3, 2)]
+Points so far: -11
+-----------
+Position: (3, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 1
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points so far: -12
+-----------
+Position: (3, 1)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1012
+entered: 8
+##################
+
++----+----+----+----+----+----+----+----+
+|    |P   |P   |G   |    |    |P   |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |P   |P   |WP  |    |
++----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |P   |    |    |
++----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |P   |P   |
++----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+
+|    |P   |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 3
+Goal: (0, 3)
+Projected path: [(1, 2), (1, 3), (0, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 2
+Goal: (3, 2)
+Projected path: [(1, 2), (2, 2), (3, 2)]
+Points so far: -9
+-----------
+Position: (3, 2)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -10
+-----------
+Position: (4, 2)
+Goal: (3, 1)
+Projected path: [(3, 2), (3, 1)]
+Points for: -12
+-----------
+Position: (3, 1)
+Goal: (3, 3)
+Projected path: [(3, 2), (3, 3)]
+Points for: -14
+-----------
+Position: (3, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 4
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points so far: -15
+-----------
+Position: (3, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 5
+Goal: (3, 5)
+Projected path: [(3, 5)]
+Points so far: -16
+-----------
+Position: (3, 5)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 6
+Goal: (3, 6)
+Projected path: [(3, 6)]
+Points so far: -17
+-----------
+Position: (3, 6)
+Goal: (3, 7)
+Projected path: [(3, 7)]
+Points for: -18
+-----------
+Position: (3, 7)
+Goal: (2, 6)
+Projected path: [(3, 6), (2, 6)]
+Points for: -20
+-----------
+Position: (2, 6)
+Goal: (4, 6)
+Projected path: [(3, 6), (4, 6)]
+Points for: -22
+-----------
+Position: (4, 6)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 8
+Goal: (3, 8)
+Projected path: [(3, 6), (3, 7), (3, 8)]
+Points so far: -25
+-----------
+Position: (3, 8)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1025
+entered: 15
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |G   |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |P   |    |    |    |P   |W   |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |P   |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |P   |    |    |P   |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |P   |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 3
+Goal: (0, 3)
+Projected path: [(1, 2), (1, 3), (0, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 2
+Goal: (3, 2)
+Projected path: [(1, 2), (2, 2), (3, 2)]
+Points so far: -9
+-----------
+Position: (3, 2)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -10
+-----------
+Position: (4, 2)
+Goal: (5, 2)
+Projected path: [(5, 2)]
+Points for: -11
+-----------
+Position: (5, 2)
+Goal: (6, 2)
+Projected path: [(6, 2)]
+Points for: -12
+-----------
+Position: (6, 2)
+Goal: (5, 1)
+Projected path: [(5, 2), (5, 1)]
+Points for: -14
+-----------
+Position: (5, 1)
+Goal: (6, 1)
+Projected path: [(6, 1)]
+Points for: -15
+-----------
+Position: (6, 1)
+Goal: (7, 1)
+Projected path: [(7, 1)]
+Points for: -16
+-----------
+Position: (7, 1)
+Goal: (8, 1)
+Projected path: [(8, 1)]
+Points for: -17
+-----------
+Position: (8, 1)
+Goal: (8, 2)
+Projected path: [(8, 2)]
+Points for: -18
+-----------
+Position: (8, 2)
+Goal: (7, 2)
+Projected path: [(7, 2)]
+Points for: -19
+-----------
+Position: (7, 2)
+Goal: (7, 3)
+Projected path: [(7, 3)]
+Points for: -20
+-----------
+Position: (7, 3)
+Goal: (5, 3)
+Projected path: [(7, 2), (6, 2), (5, 2), (5, 3)]
+Points for: -24
+-----------
+Position: (5, 3)
+Goal: (4, 3)
+Projected path: [(4, 3)]
+Points for: -25
+-----------
+Position: (4, 3)
+Goal: (3, 3)
+Projected path: [(3, 3)]
+Points for: -26
+-----------
+Position: (3, 3)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -27
+-----------
+Position: (2, 3)
+Goal: (3, 4)
+Projected path: [(3, 3), (3, 4)]
+Points for: -29
+-----------
+Position: (3, 4)
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points for: -30
+-----------
+Position: (4, 4)
+Goal: (4, 1)
+Projected path: [(4, 3), (4, 2), (4, 1)]
+Points for: -33
+-----------
+Position: (4, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -34
+-----------
+Position: (3, 1)
+Goal: (9, 1)
+Projected path: [(4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1)]
+Points for: -40
+-----------
+Position: (9, 1)
+Goal: (9, 2)
+Projected path: [(9, 2)]
+Points for: -41
+-----------
+Position: (9, 2)
+Goal: (9, 3)
+Projected path: [(9, 3)]
+Points for: -42
+-----------
+Position: (9, 3)
+Goal: (10, 2)
+Projected path: [(9, 2), (10, 2)]
+Points for: -44
+-----------
+Position: (10, 2)
+Goal: (10, 1)
+Projected path: [(10, 1)]
+Points for: -45
+-----------
+Position: (10, 1)
+Goal: (11, 1)
+Projected path: [(11, 1)]
+Points for: -45
+-----------
+Position: (10, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 9 4
+Goal: (9, 4)
+Projected path: [(9, 1), (9, 2), (9, 3), (9, 4)]
+Points so far: -49
+-----------
+Position: (9, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 8 4
+Goal: (8, 4)
+Projected path: [(8, 4)]
+Points so far: -50
+-----------
+Position: (8, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 9 5
+Goal: (9, 5)
+Projected path: [(9, 4), (9, 5)]
+Points so far: -52
+-----------
+Position: (9, 5)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1052
+entered: 31
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |P   |    |    |W   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |P   |P   |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |G   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |P   |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |P   |P   |    |P   |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |P   |P   |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1001
+entered: 2
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |P   |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |P   |P   |W   |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |P   |    |    |    |G   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |P   |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points so far: -2
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 3
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points so far: -3
+-----------
+Position: (2, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 4
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points so far: -4
+-----------
+Position: (2, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 4
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points so far: -5
+-----------
+Position: (3, 4)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1005
+entered: 6
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |P   |    |    |    |    |G   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |W   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -7
+-----------
+Position: (2, 3)
+Goal: (1, 4)
+Projected path: [(1, 3), (1, 4)]
+Points for: -9
+-----------
+Position: (1, 4)
+Goal: (1, 5)
+Projected path: [(1, 5)]
+Points for: -10
+-----------
+Position: (1, 5)
+Goal: (2, 5)
+Projected path: [(2, 5)]
+Points for: -11
+-----------
+Position: (2, 5)
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points for: -12
+-----------
+Position: (2, 4)
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points for: -13
+-----------
+Position: (3, 4)
+Goal: (1, 6)
+Projected path: [(2, 4), (1, 4), (1, 5), (1, 6)]
+Points for: -17
+-----------
+Position: (1, 6)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 4
+Goal: (4, 4)
+Projected path: [(1, 5), (1, 4), (2, 4), (3, 4), (4, 4)]
+Points so far: -22
+-----------
+Position: (4, 4)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1022
+entered: 12
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |P   |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |P   |    |    |P   |G   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |WP  |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Goal: (2, 1)
+Projected path: [(2, 1)]
+Points for: -5
+-----------
+Position: (2, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -6
+-----------
+Position: (3, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus at: (3, 2)
+Cells in range: [(1, 2), (3, 1), (2, 2)]
+Closest cell to shoot from: (3, 1)
+Cost to get to cell: 0
+Cost to shoot arrow: -10
+End at: (3, 1)
+-----------
+Position: (3, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 3
+Goal: (0, 3)
+Projected path: [(2, 1), (2, 2), (1, 2), (1, 3), (0, 3)]
+Points so far: -20
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 4
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points so far: -21
+-----------
+Position: (1, 4)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1021
+entered: 7
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |    |P   |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |W   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |P   |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |P   |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |G   |P   |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -3
+-----------
+Position: (1, 4)
+Goal: (2, 3)
+Projected path: [(1, 3), (2, 3)]
+Points for: -5
+-----------
+Position: (2, 3)
+Goal: (2, 2)
+Projected path: [(2, 2)]
+Points for: -6
+-----------
+Position: (2, 2)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -7
+-----------
+Position: (3, 2)
+Goal: (2, 1)
+Projected path: [(2, 2), (2, 1)]
+Points for: -9
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 4
+Goal: (0, 4)
+Projected path: [(2, 2), (1, 2), (1, 3), (1, 4), (0, 4)]
+Points so far: -13
+-----------
+Position: (1, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 0
+Goal: (2, 0)
+Projected path: [(1, 3), (1, 2), (2, 2), (2, 1), (2, 0)]
+Points so far: -17
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 2
+Goal: (4, 2)
+Projected path: [(2, 2), (3, 2), (4, 2)]
+Points so far: -20
+-----------
+Position: (4, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 3
+Goal: (4, 3)
+Projected path: [(4, 3)]
+Points so far: -21
+-----------
+Position: (4, 3)
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points for: -22
+-----------
+Position: (4, 4)
+Goal: (3, 3)
+Projected path: [(4, 3), (3, 3)]
+Points for: -24
+-----------
+Position: (3, 3)
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points for: -25
+-----------
+Position: (3, 4)
+Goal: (5, 3)
+Projected path: [(3, 3), (4, 3), (5, 3)]
+Points for: -28
+-----------
+Position: (5, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 5
+Goal: (3, 5)
+Projected path: [(4, 3), (3, 3), (3, 4), (3, 5)]
+Points so far: -32
+-----------
+Position: (3, 5)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 6
+Goal: (3, 6)
+Projected path: [(3, 6)]
+Points so far: -33
+-----------
+Position: (3, 6)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1033
+entered: 16
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |P   |    |P   |    |    |G   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |P   |    |    |P   |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |P   |    |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |P   |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |W   |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |P   |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 1
+Goal: (0, 1)
+Projected path: [(0, 1)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 0
+Goal: (1, 0)
+Projected path: [(1, 0)]
+Points so far: 0
+-----------
+Position: (1, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 2
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points so far: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (2, 2)
+Projected path: [(1, 2), (2, 2)]
+Points for: -4
+-----------
+Position: (2, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 3
+Goal: (0, 3)
+Projected path: [(1, 2), (1, 3), (0, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 2
+Goal: (3, 2)
+Projected path: [(1, 2), (2, 2), (3, 2)]
+Points so far: -9
+-----------
+Position: (3, 2)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -10
+-----------
+Position: (4, 2)
+Goal: (3, 1)
+Projected path: [(3, 2), (3, 1)]
+Points for: -12
+-----------
+Position: (3, 1)
+Goal: (4, 1)
+Projected path: [(4, 1)]
+Points for: -13
+-----------
+Position: (4, 1)
+Goal: (3, 3)
+Projected path: [(3, 1), (3, 2), (3, 3)]
+Points for: -16
+-----------
+Position: (3, 3)
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points for: -17
+-----------
+Position: (3, 4)
+Goal: (2, 3)
+Projected path: [(3, 3), (2, 3)]
+Points for: -19
+-----------
+Position: (2, 3)
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points for: -20
+-----------
+Position: (2, 4)
+Goal: (4, 3)
+Projected path: [(2, 3), (3, 3), (4, 3)]
+Points for: -23
+-----------
+Position: (4, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 0
+Goal: (4, 0)
+Projected path: [(4, 2), (4, 1), (4, 0)]
+Points so far: -25
+-----------
+Position: (4, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 5
+Goal: (3, 5)
+Projected path: [(3, 1), (3, 2), (3, 3), (3, 4), (3, 5)]
+Points so far: -30
+-----------
+Position: (3, 5)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 6
+Goal: (3, 6)
+Projected path: [(3, 6)]
+Points so far: -31
+-----------
+Position: (3, 6)
+Goal: (3, 7)
+Projected path: [(3, 7)]
+Points for: -32
+-----------
+Position: (3, 7)
+Goal: (2, 7)
+Projected path: [(2, 7)]
+Points for: -33
+-----------
+Position: (2, 7)
+Goal: (2, 6)
+Projected path: [(2, 6)]
+Points for: -34
+-----------
+Position: (2, 6)
+Goal: (4, 6)
+Projected path: [(3, 6), (4, 6)]
+Points for: -36
+-----------
+Position: (4, 6)
+Goal: (4, 7)
+Projected path: [(4, 7)]
+Points for: -37
+-----------
+Position: (4, 7)
+Goal: (4, 8)
+Projected path: [(4, 8)]
+Points for: -38
+-----------
+Position: (4, 8)
+Goal: (4, 9)
+Projected path: [(4, 9)]
+Points for: -39
+-----------
+Position: (4, 9)
+Goal: (4, 10)
+Projected path: [(4, 10)]
+Points for: -40
+-----------
+Position: (4, 10)
+Goal: (5, 9)
+Projected path: [(4, 9), (5, 9)]
+Points for: -42
+-----------
+Position: (5, 9)
+Goal: (5, 8)
+Projected path: [(5, 8)]
+Points for: -43
+-----------
+Position: (5, 8)
+Goal: (6, 8)
+Projected path: [(6, 8)]
+Points for: -44
+-----------
+Position: (6, 8)
+Goal: (5, 7)
+Projected path: [(5, 8), (5, 7)]
+Points for: -46
+-----------
+Position: (5, 7)
+Goal: (3, 8)
+Projected path: [(4, 7), (4, 8), (3, 8)]
+Points for: -49
+-----------
+Position: (3, 8)
+Goal: (2, 8)
+Projected path: [(2, 8)]
+Points for: -50
+-----------
+Position: (2, 8)
+Goal: (1, 8)
+Projected path: [(1, 8)]
+Points for: -51
+-----------
+Position: (1, 8)
+Goal: (1, 9)
+Projected path: [(1, 9)]
+Points for: -52
+-----------
+Position: (1, 9)
+Goal: (2, 9)
+Projected path: [(2, 9)]
+Points for: -53
+-----------
+Position: (2, 9)
+Goal: (2, 10)
+Projected path: [(2, 10)]
+Points for: -54
+-----------
+Position: (2, 10)
+Goal: (3, 9)
+Projected path: [(2, 9), (3, 9)]
+Points for: -56
+-----------
+Position: (3, 9)
+Goal: (3, 10)
+Projected path: [(3, 10)]
+Points for: -57
+-----------
+Position: (3, 10)
+Goal: (3, 11)
+Projected path: [(3, 11)]
+Points for: -57
+-----------
+Position: (3, 10)
+Goal: (1, 7)
+Projected path: [(2, 10), (2, 9), (2, 8), (2, 7), (1, 7)]
+Points for: -62
+-----------
+Position: (1, 7)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 11
+Goal: (2, 11)
+Projected path: [(2, 7), (2, 8), (2, 9), (2, 10), (2, 11)]
+Points so far: -66
+-----------
+Position: (2, 10)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 5 3
+Goal: (5, 3)
+Projected path: [(2, 9), (2, 8), (2, 7), (3, 7), (3, 6), (3, 5), (3, 4), (3, 3), (4, 3), (5, 3)]
+Points so far: -76
+-----------
+Position: (5, 3)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1076
+entered: 37
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |P   |    |    |P   |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |G   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |P   |P   |P   |P   |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |P   |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |P   |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |P   |WP  |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (1, 3)
+Projected path: [(1, 3)]
+Points for: -2
+-----------
+Position: (1, 3)
+Goal: (1, 4)
+Projected path: [(1, 4)]
+Points for: -3
+-----------
+Position: (1, 4)
+Goal: (1, 5)
+Projected path: [(1, 5)]
+Points for: -4
+-----------
+Position: (1, 5)
+Goal: (1, 6)
+Projected path: [(1, 6)]
+Points for: -5
+-----------
+Position: (1, 6)
+Goal: (2, 6)
+Projected path: [(2, 6)]
+Points for: -6
+-----------
+Position: (2, 6)
+Goal: (2, 7)
+Projected path: [(2, 7)]
+Points for: -7
+-----------
+Position: (2, 7)
+Goal: (2, 8)
+Projected path: [(2, 8)]
+Points for: -8
+-----------
+Position: (2, 8)
+Goal: (2, 9)
+Projected path: [(2, 9)]
+Points for: -9
+-----------
+Position: (2, 9)
+Goal: (3, 8)
+Projected path: [(2, 8), (3, 8)]
+Points for: -11
+-----------
+Position: (3, 8)
+Goal: (4, 8)
+Projected path: [(4, 8)]
+Points for: -12
+-----------
+Position: (4, 8)
+Goal: (3, 9)
+Projected path: [(3, 8), (3, 9)]
+Points for: -14
+-----------
+Position: (3, 9)
+Goal: (4, 9)
+Projected path: [(4, 9)]
+Points for: -15
+-----------
+Position: (4, 9)
+Goal: (4, 10)
+Projected path: [(4, 10)]
+Points for: -16
+-----------
+Position: (4, 10)
+Goal: (5, 10)
+Projected path: [(5, 10)]
+Points for: -17
+-----------
+Position: (5, 10)
+Goal: (5, 9)
+Projected path: [(5, 9)]
+Points for: -18
+-----------
+Position: (5, 9)
+Goal: (6, 9)
+Projected path: [(6, 9)]
+Points for: -19
+-----------
+Position: (6, 9)
+Found gold!
+Goal: (1, 1)
+Path to start: [(5, 9), (4, 9), (4, 8), (3, 8), (2, 8), (2, 7), (2, 6), (1, 6), (1, 5), (1, 4), (1, 3), (1, 2), (1, 1)]
+Cost to get back to start: -13
+
+##################
+GAME HAS FINISHED!
+result:  Won
+score:   968
+entered: 18
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |P   |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |P   |P   |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |P   |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |P   |P   |    |    |P   |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |    |    |P   |P   |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |P   |P   |    |    |P   |    |    |G   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |P   |    |WP  |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points for: -7
+-----------
+Position: (2, 3)
+Goal: (1, 4)
+Projected path: [(1, 3), (1, 4)]
+Points for: -9
+-----------
+Position: (1, 4)
+Goal: (1, 5)
+Projected path: [(1, 5)]
+Points for: -10
+-----------
+Position: (1, 5)
+Goal: (2, 4)
+Projected path: [(1, 4), (2, 4)]
+Points for: -12
+-----------
+Position: (2, 4)
+Goal: (2, 5)
+Projected path: [(2, 5)]
+Points for: -13
+-----------
+Position: (2, 5)
+Goal: (3, 4)
+Projected path: [(2, 4), (3, 4)]
+Points for: -15
+-----------
+Position: (3, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 4
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points so far: -16
+-----------
+Position: (4, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 4 5
+Goal: (4, 5)
+Projected path: [(4, 5)]
+Points so far: -17
+-----------
+Position: (4, 5)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 5 5
+Goal: (5, 5)
+Projected path: [(5, 5)]
+Points so far: -18
+-----------
+Position: (5, 5)
+Goal: (5, 6)
+Projected path: [(5, 6)]
+Points for: -19
+-----------
+Position: (5, 6)
+Goal: (5, 4)
+Projected path: [(5, 5), (5, 4)]
+Points for: -21
+-----------
+Position: (5, 4)
+Goal: (6, 4)
+Projected path: [(6, 4)]
+Points for: -22
+-----------
+Position: (6, 4)
+Goal: (6, 3)
+Projected path: [(6, 3)]
+Points for: -23
+-----------
+Position: (6, 3)
+Goal: (7, 3)
+Projected path: [(7, 3)]
+Points for: -24
+-----------
+Position: (7, 3)
+Goal: (7, 4)
+Projected path: [(7, 4)]
+Points for: -25
+-----------
+Position: (7, 4)
+Goal: (6, 5)
+Projected path: [(6, 4), (6, 5)]
+Points for: -27
+-----------
+Position: (6, 5)
+Goal: (6, 2)
+Projected path: [(6, 4), (6, 3), (6, 2)]
+Points for: -30
+-----------
+Position: (6, 2)
+Goal: (5, 3)
+Projected path: [(6, 3), (5, 3)]
+Points for: -32
+-----------
+Position: (5, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 0 2
+Goal: (0, 2)
+Projected path: [(5, 4), (4, 4), (3, 4), (2, 4), (1, 4), (1, 3), (1, 2), (0, 2)]
+Points so far: -39
+-----------
+Position: (1, 2)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 6
+Goal: (2, 6)
+Projected path: [(1, 3), (1, 4), (1, 5), (2, 5), (2, 6)]
+Points so far: -44
+-----------
+Position: (2, 6)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1044
+entered: 23
+##################
+
++----+----+----+----+----+----+----+----+----+----+
+|    |    |P   |    |P   |    |    |    |P   |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |P   |P   |P   |    |    |P   |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |P   |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |G   |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |    |    |    |    |    |W   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |    |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|P   |    |    |    |P   |    |P   |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+|    |P   |    |    |    |    |    |    |    |    |
++----+----+----+----+----+----+----+----+----+----+
+|    |    |    |    |    |P   |    |    |    |P   |
++----+----+----+----+----+----+----+----+----+----+
+Position: (1, 1)
+Goal: (1, 2)
+Projected path: [(1, 2)]
+Points for: -1
+-----------
+Position: (1, 2)
+Goal: (2, 1)
+Projected path: [(1, 1), (2, 1)]
+Points for: -3
+-----------
+Position: (2, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 1 3
+Goal: (1, 3)
+Projected path: [(1, 1), (1, 2), (1, 3)]
+Points so far: -6
+-----------
+Position: (1, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 3
+Goal: (2, 3)
+Projected path: [(2, 3)]
+Points so far: -7
+-----------
+Position: (2, 3)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 2 4
+Goal: (2, 4)
+Projected path: [(2, 4)]
+Points so far: -8
+-----------
+Position: (2, 4)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 4
+Goal: (3, 4)
+Projected path: [(3, 4)]
+Points so far: -9
+-----------
+Position: (3, 4)
+Goal: (4, 4)
+Projected path: [(4, 4)]
+Points for: -10
+-----------
+Position: (4, 4)
+Goal: (3, 3)
+Projected path: [(3, 4), (3, 3)]
+Points for: -12
+-----------
+Position: (3, 3)
+Goal: (3, 2)
+Projected path: [(3, 2)]
+Points for: -13
+-----------
+Position: (3, 2)
+Goal: (4, 3)
+Projected path: [(3, 3), (4, 3)]
+Points for: -15
+-----------
+Position: (4, 3)
+Goal: (4, 2)
+Projected path: [(4, 2)]
+Points for: -16
+-----------
+Position: (4, 2)
+Goal: (5, 2)
+Projected path: [(5, 2)]
+Points for: -17
+-----------
+Position: (5, 2)
+Goal: (6, 2)
+Projected path: [(6, 2)]
+Points for: -18
+-----------
+Position: (6, 2)
+Goal: (5, 1)
+Projected path: [(5, 2), (5, 1)]
+Points for: -20
+-----------
+Position: (5, 1)
+Goal: (4, 1)
+Projected path: [(4, 1)]
+Points for: -21
+-----------
+Position: (4, 1)
+Goal: (3, 1)
+Projected path: [(3, 1)]
+Points for: -22
+-----------
+Position: (3, 1)
+Goal: (5, 3)
+Projected path: [(3, 2), (3, 3), (4, 3), (5, 3)]
+Points for: -26
+-----------
+Position: (5, 3)
+Goal: (3, 5)
+Projected path: [(4, 3), (3, 3), (3, 4), (3, 5)]
+Points for: -30
+-----------
+Position: (3, 5)
+Goal: (4, 5)
+Projected path: [(4, 5)]
+Points for: -31
+-----------
+Position: (4, 5)
+Goal: (5, 5)
+Projected path: [(5, 5)]
+Points for: -32
+-----------
+Position: (5, 5)
+Goal: (4, 6)
+Projected path: [(4, 5), (4, 6)]
+Points for: -34
+-----------
+Position: (4, 6)
+Goal: (5, 6)
+Projected path: [(5, 6)]
+Points for: -35
+-----------
+Position: (5, 6)
+Goal: (6, 6)
+Projected path: [(6, 6)]
+Points for: -36
+-----------
+Position: (6, 6)
+Goal: (5, 7)
+Projected path: [(5, 6), (5, 7)]
+Points for: -38
+-----------
+Position: (5, 7)
+Goal: (4, 7)
+Projected path: [(4, 7)]
+Points for: -39
+-----------
+Position: (4, 7)
+Goal: (3, 6)
+Projected path: [(4, 6), (3, 6)]
+Points for: -41
+-----------
+Position: (3, 6)
+Goal: (3, 7)
+Projected path: [(3, 7)]
+Points for: -42
+-----------
+Position: (3, 7)
+Goal: (3, 8)
+Projected path: [(3, 8)]
+Points for: -43
+-----------
+Position: (3, 8)
+Goal: (2, 7)
+Projected path: [(3, 7), (2, 7)]
+Points for: -45
+-----------
+Position: (2, 7)
+Goal: (2, 8)
+Projected path: [(2, 8)]
+Points for: -46
+-----------
+Position: (2, 8)
+Goal: (2, 6)
+Projected path: [(2, 7), (2, 6)]
+Points for: -48
+-----------
+Position: (2, 6)
+Goal: (2, 5)
+Projected path: [(2, 5)]
+Points for: -49
+-----------
+Position: (2, 5)
+Goal: (1, 5)
+Projected path: [(1, 5)]
+Points for: -50
+-----------
+Position: (1, 5)
+Goal: (1, 7)
+Projected path: [(2, 5), (2, 6), (2, 7), (1, 7)]
+Points for: -54
+-----------
+Position: (1, 7)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 5 0
+Goal: (5, 0)
+Projected path: [(2, 7), (3, 7), (4, 7), (4, 6), (4, 5), (4, 4), (4, 3), (4, 2), (4, 1), (5, 1), (5, 0)]
+Points so far: -64
+-----------
+Position: (5, 1)
+Could not find any more safe cells, attempting to kill wumpus...
+Wumpus could not be found!
+Guessing best move is to 3 9
+Goal: (3, 9)
+Projected path: [(4, 1), (4, 2), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9)]
+Points so far: -74
+-----------
+Position: (3, 9)
+Died from pit!
+
+##################
+GAME HAS FINISHED!
+result:  Died in Pit
+score:   -1074
+entered: 36
+##################
+
