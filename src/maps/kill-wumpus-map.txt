@@ -1,0 +1,4 @@
+B,B,B,G
+B,B,W,B
+B,B,B,B
+S,B,B,B
